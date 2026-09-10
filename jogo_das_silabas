@@ -1,0 +1,511 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 17.4
+-- Dumped by pg_dump version 17.4
+
+-- Started on 2026-09-09 13:26:39
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 217 (class 1259 OID 24883)
+-- Name: nichos; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.nichos (
+    id integer NOT NULL,
+    nicho character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.nichos OWNER TO postgres;
+
+--
+-- TOC entry 218 (class 1259 OID 24886)
+-- Name: nichos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.nichos_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.nichos_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4908 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: nichos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.nichos_id_seq OWNED BY public.nichos.id;
+
+
+--
+-- TOC entry 219 (class 1259 OID 24887)
+-- Name: palavras; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.palavras (
+    id_palavra integer NOT NULL,
+    id_nicho integer NOT NULL,
+    palavra character varying(100) NOT NULL,
+    silaba character varying(100) NOT NULL,
+    cor character varying(100)
+);
+
+
+ALTER TABLE public.palavras OWNER TO postgres;
+
+--
+-- TOC entry 220 (class 1259 OID 24890)
+-- Name: palavras_id_palavra_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.palavras_id_palavra_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.palavras_id_palavra_seq OWNER TO postgres;
+
+--
+-- TOC entry 4909 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: palavras_id_palavra_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.palavras_id_palavra_seq OWNED BY public.palavras.id_palavra;
+
+
+--
+-- TOC entry 4747 (class 2604 OID 24891)
+-- Name: nichos id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.nichos ALTER COLUMN id SET DEFAULT nextval('public.nichos_id_seq'::regclass);
+
+
+--
+-- TOC entry 4748 (class 2604 OID 24892)
+-- Name: palavras id_palavra; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.palavras ALTER COLUMN id_palavra SET DEFAULT nextval('public.palavras_id_palavra_seq'::regclass);
+
+
+--
+-- TOC entry 4899 (class 0 OID 24883)
+-- Dependencies: 217
+-- Data for Name: nichos; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.nichos (id, nicho) FROM stdin;
+1	frutas
+2	animais
+3	cores
+\.
+
+
+--
+-- TOC entry 4901 (class 0 OID 24887)
+-- Dependencies: 219
+-- Data for Name: palavras; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.palavras (id_palavra, id_nicho, palavra, silaba, cor) FROM stdin;
+106	1	abacate	a&ba&ca&te	verde
+107	1	abacaxi	a&ba&ca&xi	amarelo
+108	1	acerola	a&ce&ro&la	vermelho
+109	1	ameixa	a&mei&xa	roxo
+110	1	amora	a&mo&ra	roxo
+111	1	anana	a&na&na	amarelo
+112	1	araca	a&ra&ça	amarelo
+113	1	ata	a&ta	verde
+114	1	avocado	a&vo&ca&do	verde
+115	1	bacaba	ba&ca&ba	roxo
+116	1	bacuri	ba&cu&ri	amarelo
+117	1	banana	ba&na&na	amarelo
+118	1	biriba	bi&ri&ba	amarelo
+119	1	buriti	bu&ri&ti	laranja
+120	1	cacau	ca&cau	marrom
+121	1	caju	ca&ju	vermelho
+122	1	caqui	ca&qui	laranja
+123	1	carambola	ca&ram&bo&la	amarelo
+124	1	cereja	ce&re&ja	vermelho
+125	1	cidra	ci&dra	amarelo
+126	1	coco	co&co	marrom
+127	1	cupuaçu	cu&pu&a&çu	marrom
+128	1	damasco	da&mas&co	laranja
+129	1	figo	fi&go	roxo
+130	1	framboesa	fram&bo&e&sa	vermelho
+131	1	fruta-pão	fru&ta&pão	verde
+132	1	goiaba	goi&a&ba	verde
+133	1	graviola	gra&vi&o&la	verde
+134	1	groselha	gro&se&lha	vermelho
+135	1	jabuticaba	ja&bu&ti&ca&ba	roxo
+136	1	jaca	ja&ca	amarelo
+137	1	jenipapo	je&ni&pa&po	verde
+138	1	kiwi	ki&wi	marrom
+160	1	uva	u&va	roxo
+192	1	tucumã	tu&cu&mã	laranja
+193	1	umbu	um&bu	verde
+194	1	uvaia	u&va&ia	amarelo
+195	1	veludo	ve&lu&do	vermelho
+196	1	melão-de-são-caetano	me&lão&de&são&ca&e&ta&no	verde
+197	1	physalis	phy&sa&lis	laranja
+198	1	longan	lon&gan	marrom
+199	1	mangostão	man&gos&tão	roxo
+200	1	rambutã	ram&bu&tã	vermelho
+201	1	tâmara	tâ&ma&ra	marrom
+202	1	toranja	to&ran&ja	laranja
+203	1	kumquat	kum&quat	laranja
+204	1	nectarina	nec&ta&ri&na	laranja
+205	1	pomarrosa	po&ma&rro&sa	vermelho
+206	1	tamarillo	ta&ma&ri&llo	vermelho
+207	1	sapucaia	sa&pu&ca&ia	marrom
+208	1	mangaba	man&ga&ba	amarelo
+209	1	araçá	a&ra&çá	vermelho
+210	1	camu-camu	ca&mu&ca&mu	vermelho
+215	2	Cachorro	Ca&chor&ro	Marrom
+216	2	Cachorro	Ca&chor&ro	Marrom
+217	2	Gato	Ga&to	Branco
+218	2	Cavalo	Ca&va&lo	Marrom
+219	2	Vaca	Va&ca	Preto e branco
+220	2	Porco	Por&co	Rosa
+221	2	Ovelha	O&ve&lha	Branco
+222	2	Cabra	Ca&bra	Branco
+223	2	Coelho	Co&e&lho	Branco
+224	2	Galinha	Ga&li&nha	Branco
+225	2	Galo	Ga&lo	Vermelho
+226	2	Pato	Pa&to	Amarelo
+227	2	Ganso	Gan&so	Branco
+228	2	Peru	Pe&ru	Marrom
+229	2	Pavão	Pa&vão	Azul
+230	2	Águia	Á&guia	Marrom
+231	2	Falcão	Fal&cão	Marrom
+232	2	Coruja	Co&ru&ja	Marrom
+233	2	Papagaio	Pa&pa&gai&o	Verde
+234	2	Arara	A&ra&ra	Colorido
+235	2	Canário	Ca&ná&rio	Amarelo
+236	2	Hamster	Hams&ter	Marrom
+237	2	Porquinho-da-índia	Por&qui&nho-da-ín&di&a	Branco e marrom
+238	2	Rato	Ra&to	Cinza
+239	2	Camundongo	Ca&mun&don&go	Cinza
+240	2	Morcego	Mor&ce&go	Preto
+241	2	Preguiça	Pre&gui&ça	Marrom
+242	2	Tucano	Tu&ca&no	Preto e amarelo
+243	2	Pica-pau	Pi&ca-pau	Preto e vermelho
+244	2	Beija-flor	Bei&ja-flor	Verde
+245	2	Rouxinol	Rou&xi&nol	Marrom
+246	2	Pombo	Pom&bo	Cinza
+247	2	Periquito	Pe&ri&qui&to	Verde
+248	2	Calopsita	Ca&lop&si&ta	Amarelo
+249	2	Maritaca	Ma&ri&ta&ca	Verde
+250	2	Garça	Gar&ça	Branco
+251	2	Pelicano	Pe&li&ca&no	Branco
+252	2	Cegonha	Ce&go&nha	Branco
+253	2	Urubu	U&ru&bu	Preto
+254	2	Condor	Con&dor	Preto
+255	2	Harpia	Har&pi&a	Cinza
+256	2	Pardal	Par&dal	Marrom
+257	2	Bem-te-vi	Bem-te-vi	Amarelo
+258	2	Sabiá	Sa&bi&á	Marrom
+259	2	Seriema	Se&ri&e&ma	Marrom
+260	2	Ema	E&ma	Marrom
+261	2	Jacutinga	Ja&cu&tin&ga	Preto
+262	2	Mutum	Mu&tum	Preto
+263	2	Codorna	Co&dor&na	Marrom
+264	2	Pato-real	Pa&to-real	Verde
+265	2	Rena	Re&na	Marrom
+266	2	Búfalo	Bú&fa&lo	Preto
+267	2	Bisão	Bi&são	Marrom
+268	2	Antílope	An&tí&lo&pe	Marrom
+269	2	Gazela	Ga&ze&la	Marrom
+270	2	Gnu	Gnu	Marrom
+271	2	Iaque	I&a&que	Preto
+272	2	Lhama	Lha&ma	Marrom
+273	2	Alpaca	Al&pa&ca	Branco
+274	2	Mula	Mu&la	Marrom
+275	2	Jumento	Ju&men&to	Cinza
+276	2	Doninha	Do&ni&nha	Marrom
+277	2	Suricato	Su&ri&ca&to	Marrom
+278	2	Guaxinim	Guax&inim	Cinza
+279	2	Gambá	Gam&bá	Preto e branco
+280	2	Puma	Pu&ma	Marrom
+281	2	Jaguar	Ja&guar	Amarelo
+282	2	Lince	Lin&ce	Marrom
+283	2	Chacal	Cha&cal	Marrom
+284	2	Coiote	Co&io&te	Marrom
+285	2	Texugo	Te&xu&go	Preto e branco
+286	2	Esquilo-voador	Es&qui&lo-vo&a&dor	Marrom
+287	2	Porco-espinho	Por&co-es&pi&nho	Marrom
+288	2	Ouriço	Ou&ri&ço	Marrom
+289	2	Pangolim	Pan&go&lim	Marrom
+290	2	Tamanduá-bandeira	Ta&man&du&á-ban&dei&ra	Preto e branco
+291	2	Quati	Qua&ti	Marrom
+292	2	Cutia	Cu&ti&a	Marrom
+293	2	Preá	Pre&á	Marrom
+294	2	Mico	Mi&co	Marrom
+295	2	Bugio	Bu&gi&o	Marrom
+296	2	Babuíno	Ba&bu&í&no	Marrom
+297	2	Mandril	Man&dril	Colorido
+298	2	Sagui	Sa&gui	Cinza
+299	2	Ornitorrinco	Or&ni&tor&rin&co	Marrom
+300	2	Equidna	E&qui&d&na	Marrom
+301	2	Marmota	Mar&mo&ta	Marrom
+302	2	Doninha	Do&ni&nha	Marrom
+303	2	Furão	Fu&rão	Marrom
+304	2	Cangambá	Can&gam&bá	Preto e branco
+305	2	Degu	De&gu	Marrom
+139	1	laranja	la&ran&ja	laranja
+140	1	lichia	li&chi&a	vermelho
+141	1	limão	li&mão	verde
+142	1	maçã	ma&çã	vermelho
+143	1	mamão	ma&mão	laranja
+144	1	manga	man&ga	amarelo
+145	1	mangaba	man&ga&ba	amarelo
+146	1	maracujá	ma&ra&cu&já	amarelo
+147	1	melancia	me&lan&ci&a	verde
+148	1	melão	me&lão	amarelo
+149	1	mexerica	me&xe&ri&ca	laranja
+150	1	morango	mo&ran&go	vermelho
+151	1	nectarina	nec&ta&ri&na	laranja
+152	1	nêspera	nês&pe&ra	laranja
+153	1	pêssego	pês&se&go	laranja
+154	1	pitanga	pi&tan&ga	vermelho
+155	1	pitaya	pi&ta&ya	rosa
+156	1	pitomba	pi&tom&ba	amarelo
+157	1	romã	ro&mã	vermelho
+158	1	tamarindo	ta&ma&rin&do	marrom
+159	1	tangerina	tan&ge&ri&na	laranja
+161	1	açaí	a&ça&í	roxo
+162	1	bacuri	ba&cu&ri	amarelo
+163	1	cambuci	cam&bu&ci	verde
+164	1	cajá	ca&já	amarelo
+165	1	cajamanga	ca&ja&man&ga	amarelo
+166	1	calabura	ca&la&bu&ra	vermelho
+167	1	cambucá	cam&bu&cá	amarelo
+168	1	canistel	ca&nis&tel	amarelo
+169	1	castanha	cas&ta&nha	marrom
+170	1	cereja-do-rio-grande	ce&re&ja&do&ri&o&gran&de	vermelho
+171	1	cupuacu	cu&pu&a&cu	marrom
+172	1	dióspiro	di&ós&pi&ro	laranja
+173	1	embaúba	em&ba&ú&ba	verde
+174	1	fruta-do-conde	fru&ta&do&con&de	verde
+175	1	grumixama	gru&mi&xa&ma	roxo
+176	1	guabiroba	gua&bi&ro&ba	amarelo
+177	1	guaraná	gua&ra&ná	vermelho
+178	1	ingá	in&gá	verde
+179	1	jambo	jam&bo	vermelho
+180	1	jambolão	jam&bo&lão	roxo
+181	1	jaracatiá	ja&ra&ca&ti&á	laranja
+182	1	juçara	ju&ça&ra	roxo
+183	1	jurubeba	ju&ru&be&ba	verde
+184	1	marmelo	mar&me&lo	amarelo
+185	1	murici	mu&ri&ci	amarelo
+186	1	pequi	pe&qui	amarelo
+187	1	pinha	pi&nha	verde
+188	1	pistache	pis&ta&che	verde
+189	1	pomelo	po&me&lo	amarelo
+190	1	sapoti	sa&po&ti	marrom
+191	1	seriguela	se&ri&gue&la	vermelho
+306	2	Chinchila	Chin&chi&la	Cinza
+307	2	Castor	Cas&tor	Marrom
+308	2	Ariranha	A&ri&ra&nha	Marrom
+309	2	Furão	Fu&rão	Marrom
+310	2	Axolote	A&xo&lo&te	Rosa
+311	2	Salamandra	Sa&la&man&dra	Laranja
+312	2	Lagartixa	La&gar&ti&xa	Marrom
+313	2	Gecko	Ge&cko	Verde
+314	2	Teiú	Te&i&ú	Marrom
+315	2	Cágado	Cá&ga&do	Verde
+316	2	Jabuti	Ja&bu&ti	Marrom
+317	2	Cobra-coral	Co&bra-co&ral	Vermelho e preto
+318	2	Cascavel	Cas&ca&vel	Marrom
+319	2	Sucuri	Su&cu&ri	Verde
+320	2	Naja	Na&ja	Marrom
+321	2	Mamba	Mam&ba	Verde
+322	2	Lagarto-teiú	La&gar&to-te&i&ú	Marrom
+323	3	Vermelho	Ver&me&lho	Vermelho
+324	3	Azul	A&zul	Azul
+325	3	Amarelo	A&ma&re&lo	Amarelo
+326	3	Verde	Ver&de	Verde
+327	3	Laranja	La&ran&ja	Laranja
+328	3	Roxo	Ro&xo	Roxo
+329	3	Rosa	Ro&sa	Rosa
+330	3	Marrom	Ma&rrom	Marrom
+331	3	Preto	Pre&to	Preto
+332	3	Branco	Bran&co	Branco
+333	3	Cinza	Cin&za	Cinza
+334	3	Bege	Be&ge	Bege
+335	3	Dourado	Dou&ra&do	Dourado
+336	3	Prateado	Pra&te&a&do	Prateado
+337	3	Turquesa	Tur&que&sa	Turquesa
+338	3	Violeta	Vi&o&le&ta	Violeta
+339	3	Lilás	Li&lás	Lilás
+340	3	Magenta	Ma&gen&ta	Magenta
+341	3	Ciano	Ci&a&no	Ciano
+342	3	Índigo	Ín&di&go	Índigo
+343	3	Bordô	Bor&dô	Bordô
+344	3	Creme	Cre&me	Creme
+345	3	Marfim	Mar&fim	Marfim
+346	3	Coral	Co&ral	Coral
+347	3	Salmão	Sal&mão	Salmão
+348	3	Oliva	O&li&va	Oliva
+349	3	Mostarda	Mos&tar&da	Mostarda
+350	3	Cáqui	Cá&qui	Cáqui
+351	3	Lavanda	La&van&da	Lavanda
+352	3	Pêssego	Pês&se&go	Pêssego
+353	3	Terracota	Ter&ra&co&ta	Terracota
+354	3	Ameixa	A&mei&xa	Ameixa
+355	3	Uva	U&va	Uva
+356	3	Vinho	Vi&nho	Vinho
+357	3	Cereja	Ce&re&ja	Cereja
+358	3	Ferrugem	Fer&ru&gem	Ferrugem
+359	3	Cobre	Co&bre	Cobre
+360	3	Bronze	Bron&ze	Bronze
+361	3	Âmbar	Âm&bar	Âmbar
+362	3	Ocre	O&cre	Ocre
+363	3	Mostarda	Mos&tar&da	Mostarda
+364	3	Esmeralda	Es&me&ral&da	Esmeralda
+365	3	Safira	Sa&fi&ra	Safira
+366	3	Rubi	Ru&bi	Rubi
+367	3	Topázio	To&pá&zi&o	Topázio
+368	3	Jade	Ja&de	Jade
+369	3	Anil	A&nil	Anil
+370	3	Açafrão	A&ça&frão	Açafrão
+371	3	Canela	Ca&ne&la	Canela
+372	3	Caramelo	Ca&ra&me&lo	Caramelo
+373	3	Chocolate	Cho&co&la&te	Chocolate
+374	3	Café	Ca&fé	Café
+375	3	Areia	A&re&ia	Areia
+376	3	Pérola	Pé&ro&la	Pérola
+377	3	Fúcsia	Fúc&si&a	Fúcsia
+378	3	Framboesa	Fram&bo&e&sa	Framboesa
+379	3	Morango	Mo&ran&go	Morango
+380	3	Melancia	Me&lan&ci&a	Melancia
+381	3	Abóbora	A&bó&bo&ra	Abóbora
+382	3	Tangerina	Tan&ge&ri&na	Tangerina
+383	3	Limão	Li&mão	Limão
+384	3	Maçã	Ma&çã	Maçã
+385	3	Menta	Men&ta	Menta
+386	3	Hortelã	Hor&te&lã	Hortelã
+387	3	Musgo	Mus&go	Musgo
+388	3	Pistache	Pis&ta&che	Pistache
+389	3	Abacate	A&ba&ca&te	Abacate
+390	3	Azeitona	A&zei&to&na	Azeitona
+391	3	Esmeralda	Es&me&ral&da	Esmeralda
+392	3	Marinho	Ma&ri&nho	Marinho
+393	3	Celeste	Ce&les&te	Celeste
+394	3	Bebê	Be&bê	Azul-claro
+395	3	Royal	Ro&yal	Azul-escuro
+396	3	Anilado	A&ni&la&do	Azul
+397	3	Neon	Ne&on	Verde
+398	3	Pistache	Pis&ta&che	Verde-claro
+399	3	Abacaxi	A&ba&ca&xi	Amarelo
+400	3	Ouro	Ou&ro	Dourado
+401	3	Champanhe	Cham&pa&nhe	Bege
+402	3	Nude	Nu&de	Bege
+403	3	Carmin	Car&min	Vermelho
+404	3	Escarlate	Es&car&la&te	Vermelho
+405	3	Carmim	Car&mim	Vermelho
+406	3	Borgonha	Bor&go&nha	Vinho
+407	3	Grená	Gre&ná	Vermelho-escuro
+408	3	Púrpura	Púr&pu&ra	Roxo
+409	3	Ametista	A&me&tis&ta	Roxo
+410	3	Orquídea	Or&quí&de&a	Roxo
+411	3	Malva	Mal&va	Roxo-claro
+412	3	Fandango	Fan&dan&go	Rosa
+413	3	Salmão-claro	Sal&mão-cla&ro	Rosa-claro
+414	3	Carmim-claro	Car&mim-cla&ro	Vermelho-claro
+415	3	Azul-celeste	A&zul-ce&les&te	Azul-claro
+416	3	Verde-água	Ver&de-á&gua	Verde-claro
+417	3	Verde-musgo	Ver&de-mus&go	Verde-escuro
+418	3	Amarelo-canário	A&ma&re&lo-ca&ná&rio	Amarelo
+419	3	Cinza-chumbo	Cin&za-chum&bo	Cinza-escuro
+420	3	Cinza-prata	Cin&za-pra&ta	Prateado
+421	3	Branco-gelo	Bran&co-ge&lo	Branco
+422	3	Preto-fosco	Pre&to-fos&co	Preto
+423	3	Marrom-claro	Ma&rrom-cla&ro	Marrom-claro
+424	3	Marrom-escuro	Ma&rrom-es&cu&ro	Marrom-escuro
+425	3	Bege-claro	Be&ge-cla&ro	Bege-claro
+426	3	Creme-claro	Cre&me-cla&ro	Creme
+\.
+
+
+--
+-- TOC entry 4910 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: nichos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.nichos_id_seq', 3, true);
+
+
+--
+-- TOC entry 4911 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: palavras_id_palavra_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.palavras_id_palavra_seq', 426, true);
+
+
+--
+-- TOC entry 4750 (class 2606 OID 24894)
+-- Name: nichos nichos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.nichos
+    ADD CONSTRAINT nichos_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 4752 (class 2606 OID 24896)
+-- Name: palavras palavras_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.palavras
+    ADD CONSTRAINT palavras_pkey PRIMARY KEY (id_palavra);
+
+
+--
+-- TOC entry 4753 (class 2606 OID 24897)
+-- Name: palavras palavras_id_nicho_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.palavras
+    ADD CONSTRAINT palavras_id_nicho_fkey FOREIGN KEY (id_nicho) REFERENCES public.nichos(id);
+
+
+-- Completed on 2026-09-09 13:26:39
+
+--
+-- PostgreSQL database dump complete
+--
+
