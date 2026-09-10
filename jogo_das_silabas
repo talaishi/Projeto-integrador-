@@ -5,7 +5,7 @@
 -- Dumped from database version 17.4
 -- Dumped by pg_dump version 17.4
 
--- Started on 2026-09-09 13:26:39
+-- Started on 2026-09-09 15:53:33
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -128,6 +128,7 @@ COPY public.nichos (id, nicho) FROM stdin;
 1	frutas
 2	animais
 3	cores
+4	universo
 \.
 
 
@@ -455,6 +456,222 @@ COPY public.palavras (id_palavra, id_nicho, palavra, silaba, cor) FROM stdin;
 424	3	Marrom-escuro	Ma&rrom-es&cu&ro	Marrom-escuro
 425	3	Bege-claro	Be&ge-cla&ro	Bege-claro
 426	3	Creme-claro	Cre&me-cla&ro	Creme
+427	4	Sol	Sol	Amarelo
+428	4	Lua	Lu&a	Cinza
+429	4	Terra	Ter&ra	Azul
+430	4	Marte	Mar&te	Vermelho
+431	4	Júpiter	Jú&pi&ter	Marrom
+432	4	Saturno	Sa&tur&no	Amarelo
+433	4	Urano	U&ra&no	Azul
+434	4	Netuno	Nep&tu&no	Azul
+435	4	Mercúrio	Mer&cú&rio	Cinza
+436	4	Vênus	Vê&nus	Amarelo
+437	4	Plutão	Plu&tão	Cinza
+438	4	Estrela	Es&tre&la	Branco
+439	4	Galáxia	Ga&lá&xia	Colorido
+440	4	Nebulosa	Ne&bu&lo&sa	Roxo
+441	4	Cometa	Co&me&ta	Branco
+442	4	Asteroide	As&te&roi&de	Cinza
+443	4	Meteoro	Me&te&o&ro	Laranja
+444	4	Meteorito	Me&te&o&ri&to	Cinza
+445	4	Buraco negro	Bu&ra&co&ne&gro	Preto
+446	4	Quasar	Qua&sar	Azul
+447	4	Pulsar	Pul&sar	Azul
+448	4	Supernova	Su&per&no&va	Branco
+449	4	Constelação	Cons&te&la&ção	Branco
+450	4	Andrômeda	An&drô&me&da	Roxo
+451	4	Via Láctea	Vi&a&Lác&te&a	Branco
+452	4	Eclipse	E&clip&se	Preto
+453	4	Eclipse solar	E&clip&se&so&lar	Amarelo
+454	4	Eclipse lunar	E&clip&se&lu&nar	Vermelho
+455	4	Órbita	Ór&bi&ta	Azul
+456	4	Gravidade	Gra&vi&da&de	Preto
+457	4	Astronauta	As&tro&nau&ta	Branco
+458	4	Foguete	Fo&gue&te	Prata
+459	4	Satélite	Sa&té&li&te	Prata
+460	4	Estação espacial	Es&ta&ção&es&pa&ci&al	Branco
+461	4	Telescópio	Te&les&có&pio	Prata
+462	4	Astronomia	As&tro&no&mi&a	Azul
+463	4	Cosmos	Cos&mos	Preto
+464	4	Universo	U&ni&ver&so	Colorido
+465	4	Espaço	Es&pa&ço	Preto
+466	4	Planeta	Pla&ne&ta	Azul
+467	4	Estrela cadente	Es&tre&la&ca&den&te	Amarelo
+468	4	Estrela anã	Es&tre&la&a&nã	Vermelho
+469	4	Anã branca	A&nã&bran&ca	Branco
+470	4	Anã vermelha	A&nã&ver&me&lha	Vermelho
+471	4	Gigante vermelha	Gi&gan&te&ver&me&lha	Vermelho
+472	4	Gigante azul	Gi&gan&te&a&zul	Azul
+473	4	Anel planetário	A&nel&pla&ne&tá&rio	Amarelo
+474	4	Atmosfera	At&mos&fe&ra	Azul
+475	4	Cinturão de asteroides	Cin&tu&rão&de&as&te&roi&des	Cinza
+476	4	Cinturão de Kuiper	Cin&tu&rão&de&Kui&per	Azul
+477	4	Nuvem de Oort	Nu&vem&de&Oort	Branco
+478	4	Lua cheia	Lu&a&chei&a	Branco
+479	4	Lua nova	Lu&a&no&va	Preto
+480	4	Lua crescente	Lu&a&cres&cen&te	Amarelo
+481	4	Lua minguante	Lu&a&min&gu&an&te	Cinza
+482	4	Cratera	Cra&te&ra	Cinza
+483	4	Solo lunar	So&lo&lu&nar	Cinza
+484	4	Mar lunar	Mar&lu&nar	Cinza
+485	4	Anel de Saturno	A&nel&de&Sa&tur&no	Amarelo
+486	4	Mancha solar	Man&cha&so&lar	Preto
+487	4	Vento solar	Ven&to&so&lar	Amarelo
+488	4	Tempestade solar	Tem&pes&ta&de&so&lar	Laranja
+489	4	Aurora	Au&ro&ra	Verde
+490	4	Aurora boreal	Au&ro&ra&bo&re&al	Verde
+491	4	Aurora austral	Au&ro&ra&aus&tral	Roxo
+492	4	Radiação	Ra&di&a&ção	Roxo
+493	4	Luz	Luz	Branco
+494	4	Fóton	Fó&ton	Branco
+495	4	Vácuo	Vá&cu&o	Preto
+496	4	Dimensão	Di&men&são	Roxo
+497	4	Espaço-tempo	Es&pa&ço&tem&po	Preto
+498	4	Matéria escura	Ma&té&ria&es&cu&ra	Preto
+499	4	Energia escura	E&ner&gi&a&es&cu&ra	Roxo
+500	4	Antimatéria	An&ti&ma&té&ria	Azul
+501	4	Galáxia espiral	Ga&lá&xia&es&pi&ral	Azul
+502	4	Galáxia elíptica	Ga&lá&xia&e&líp&ti&ca	Amarelo
+503	4	Aglomerado estelar	A&glo&me&ra&do&es&te&lar	Branco
+504	4	Aglomerado de galáxias	A&glo&me&ra&do&de&ga&lá&xi&as	Colorido
+505	4	Estrela de nêutrons	Es&tre&la&de&nêu&trons	Azul
+506	4	Anã marrom	A&nã&ma&rrom	Marrom
+507	4	Anã negra	A&nã&ne&gra	Preto
+508	4	Buraco de minhoca	Bu&ra&co&de&mi&nho&ca	Roxo
+509	4	Horizonte de eventos	Ho&ri&zon&te&de&e&ven&tos	Preto
+510	4	Singularidade	Sin&gu&la&ri&da&de	Preto
+511	4	Magnetar	Mag&ne&tar	Azul
+512	4	Blazar	Bla&zar	Roxo
+513	4	Radiação cósmica	Ra&di&a&ção&cós&mi&ca	Branco
+514	4	Raio cósmico	Rai&o&cós&mi&co	Azul
+515	4	Plasma	Plas&ma	Laranja
+516	4	Hidrogênio	Hi&dro&gê&nio	Branco
+517	4	Hélio	Hé&lio	Amarelo
+518	4	Oxigênio	O&xi&gê&nio	Vermelho
+519	4	Nitrogênio	Ni&tro&gê&nio	Azul
+520	4	Carbono	Car&bo&no	Preto
+521	4	Superaglomerado	Su&per&a&glo&me&ra&do	Colorido
+522	4	Filamento cósmico	Fi&la&men&to&cós&mi&co	Branco
+523	4	Hubble	Hub&ble	Prata
+524	4	James Webb	Ja&mes&Webb	Dourado
+525	4	ISS	ISS	Branco
+526	4	Rover	Ro&ver	Prata
+527	4	Módulo lunar	Mó&du&lo&lu&nar	Prata
+528	4	Traje espacial	Tra&je&es&pa&ci&al	Branco
+529	4	Base lunar	Ba&se&lu&nar	Cinza
+530	4	Colônia espacial	Co&lô&ni&a&es&pa&ci&al	Branco
+531	4	Exoplaneta	Ex&o&pla&ne&ta	Azul
+532	4	Planeta anão	Pla&ne&ta&a&não	Cinza
+533	4	Protoplaneta	Pro&to&pla&ne&ta	Marrom
+534	4	Disco protoplanetário	Dis&co&pro&to&pla&ne&tá&rio	Laranja
+535	4	Sol	Sol	Amarelo
+536	4	Lua	Lu&a	Cinza
+537	4	Terra	Ter&ra	Azul
+538	4	Marte	Mar&te	Vermelho
+539	4	Júpiter	Jú&pi&ter	Marrom
+540	4	Saturno	Sa&tur&no	Amarelo
+541	4	Urano	U&ra&no	Azul
+542	4	Netuno	Nep&tu&no	Azul
+543	4	Mercúrio	Mer&cú&rio	Cinza
+544	4	Vênus	Vê&nus	Amarelo
+545	4	Plutão	Plu&tão	Cinza
+546	4	Estrela	Es&tre&la	Branco
+547	4	Galáxia	Ga&lá&xia	Colorido
+548	4	Nebulosa	Ne&bu&lo&sa	Roxo
+549	4	Cometa	Co&me&ta	Branco
+550	4	Asteroide	As&te&roi&de	Cinza
+551	4	Meteoro	Me&te&o&ro	Laranja
+552	4	Meteorito	Me&te&o&ri&to	Cinza
+553	4	Buraco negro	Bu&ra&co&ne&gro	Preto
+554	4	Quasar	Qua&sar	Azul
+555	4	Pulsar	Pul&sar	Azul
+556	4	Supernova	Su&per&no&va	Branco
+557	4	Constelação	Cons&te&la&ção	Branco
+558	4	Andrômeda	An&drô&me&da	Roxo
+559	4	Via Láctea	Vi&a&Lác&te&a	Branco
+560	4	Eclipse	E&clip&se	Preto
+561	4	Eclipse solar	E&clip&se&so&lar	Amarelo
+562	4	Eclipse lunar	E&clip&se&lu&nar	Vermelho
+563	4	Órbita	Ór&bi&ta	Azul
+564	4	Gravidade	Gra&vi&da&de	Preto
+565	4	Astronauta	As&tro&nau&ta	Branco
+566	4	Foguete	Fo&gue&te	Prata
+567	4	Satélite	Sa&té&li&te	Prata
+568	4	Estação espacial	Es&ta&ção&es&pa&ci&al	Branco
+569	4	Telescópio	Te&les&có&pio	Prata
+570	4	Astronomia	As&tro&no&mi&a	Azul
+571	4	Cosmos	Cos&mos	Preto
+572	4	Universo	U&ni&ver&so	Colorido
+573	4	Espaço	Es&pa&ço	Preto
+574	4	Planeta	Pla&ne&ta	Azul
+575	4	Estrela cadente	Es&tre&la&ca&den&te	Amarelo
+576	4	Estrela anã	Es&tre&la&a&nã	Vermelho
+577	4	Anã branca	A&nã&bran&ca	Branco
+578	4	Anã vermelha	A&nã&ver&me&lha	Vermelho
+579	4	Gigante vermelha	Gi&gan&te&ver&me&lha	Vermelho
+580	4	Gigante azul	Gi&gan&te&a&zul	Azul
+581	4	Anel planetário	A&nel&pla&ne&tá&rio	Amarelo
+582	4	Atmosfera	At&mos&fe&ra	Azul
+583	4	Cinturão de asteroides	Cin&tu&rão&de&as&te&roi&des	Cinza
+584	4	Cinturão de Kuiper	Cin&tu&rão&de&Kui&per	Azul
+585	4	Nuvem de Oort	Nu&vem&de&Oort	Branco
+586	4	Lua cheia	Lu&a&chei&a	Branco
+587	4	Lua nova	Lu&a&no&va	Preto
+588	4	Lua crescente	Lu&a&cres&cen&te	Amarelo
+589	4	Lua minguante	Lu&a&min&gu&an&te	Cinza
+590	4	Cratera	Cra&te&ra	Cinza
+591	4	Solo lunar	So&lo&lu&nar	Cinza
+592	4	Mar lunar	Mar&lu&nar	Cinza
+593	4	Anel de Saturno	A&nel&de&Sa&tur&no	Amarelo
+594	4	Mancha solar	Man&cha&so&lar	Preto
+595	4	Vento solar	Ven&to&so&lar	Amarelo
+596	4	Tempestade solar	Tem&pes&ta&de&so&lar	Laranja
+597	4	Aurora	Au&ro&ra	Verde
+598	4	Aurora boreal	Au&ro&ra&bo&re&al	Verde
+599	4	Aurora austral	Au&ro&ra&aus&tral	Roxo
+600	4	Radiação	Ra&di&a&ção	Roxo
+601	4	Luz	Luz	Branco
+602	4	Fóton	Fó&ton	Branco
+603	4	Vácuo	Vá&cu&o	Preto
+604	4	Dimensão	Di&men&são	Roxo
+605	4	Espaço-tempo	Es&pa&ço&tem&po	Preto
+606	4	Matéria escura	Ma&té&ria&es&cu&ra	Preto
+607	4	Energia escura	E&ner&gi&a&es&cu&ra	Roxo
+608	4	Antimatéria	An&ti&ma&té&ria	Azul
+609	4	Galáxia espiral	Ga&lá&xia&es&pi&ral	Azul
+610	4	Galáxia elíptica	Ga&lá&xia&e&líp&ti&ca	Amarelo
+611	4	Aglomerado estelar	A&glo&me&ra&do&es&te&lar	Branco
+612	4	Aglomerado de galáxias	A&glo&me&ra&do&de&ga&lá&xi&as	Colorido
+613	4	Estrela de nêutrons	Es&tre&la&de&nêu&trons	Azul
+614	4	Anã marrom	A&nã&ma&rrom	Marrom
+615	4	Anã negra	A&nã&ne&gra	Preto
+616	4	Buraco de minhoca	Bu&ra&co&de&mi&nho&ca	Roxo
+617	4	Horizonte de eventos	Ho&ri&zon&te&de&e&ven&tos	Preto
+618	4	Singularidade	Sin&gu&la&ri&da&de	Preto
+619	4	Magnetar	Mag&ne&tar	Azul
+620	4	Blazar	Bla&zar	Roxo
+621	4	Radiação cósmica	Ra&di&a&ção&cós&mi&ca	Branco
+622	4	Raio cósmico	Rai&o&cós&mi&co	Azul
+623	4	Plasma	Plas&ma	Laranja
+624	4	Hidrogênio	Hi&dro&gê&nio	Branco
+625	4	Hélio	Hé&lio	Amarelo
+626	4	Oxigênio	O&xi&gê&nio	Vermelho
+627	4	Nitrogênio	Ni&tro&gê&nio	Azul
+628	4	Carbono	Car&bo&no	Preto
+629	4	Superaglomerado	Su&per&a&glo&me&ra&do	Colorido
+630	4	Filamento cósmico	Fi&la&men&to&cós&mi&co	Branco
+631	4	Hubble	Hub&ble	Prata
+632	4	James Webb	Ja&mes&Webb	Dourado
+633	4	ISS	ISS	Branco
+634	4	Rover	Ro&ver	Prata
+635	4	Módulo lunar	Mó&du&lo&lu&nar	Prata
+636	4	Traje espacial	Tra&je&es&pa&ci&al	Branco
+637	4	Base lunar	Ba&se&lu&nar	Cinza
+638	4	Colônia espacial	Co&lô&ni&a&es&pa&ci&al	Branco
+639	4	Exoplaneta	Ex&o&pla&ne&ta	Azul
+640	4	Planeta anão	Pla&ne&ta&a&não	Cinza
+641	4	Protoplaneta	Pro&to&pla&ne&ta	Marrom
+642	4	Disco protoplanetário	Dis&co&pro&to&pla&ne&tá&rio	Laranja
 \.
 
 
@@ -464,7 +681,7 @@ COPY public.palavras (id_palavra, id_nicho, palavra, silaba, cor) FROM stdin;
 -- Name: nichos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.nichos_id_seq', 3, true);
+SELECT pg_catalog.setval('public.nichos_id_seq', 4, true);
 
 
 --
@@ -473,7 +690,7 @@ SELECT pg_catalog.setval('public.nichos_id_seq', 3, true);
 -- Name: palavras_id_palavra_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.palavras_id_palavra_seq', 426, true);
+SELECT pg_catalog.setval('public.palavras_id_palavra_seq', 642, true);
 
 
 --
@@ -503,7 +720,7 @@ ALTER TABLE ONLY public.palavras
     ADD CONSTRAINT palavras_id_nicho_fkey FOREIGN KEY (id_nicho) REFERENCES public.nichos(id);
 
 
--- Completed on 2026-09-09 13:26:39
+-- Completed on 2026-09-09 15:53:33
 
 --
 -- PostgreSQL database dump complete
