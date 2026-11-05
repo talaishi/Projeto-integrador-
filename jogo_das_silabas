@@ -5,7 +5,7 @@
 -- Dumped from database version 17.4
 -- Dumped by pg_dump version 17.4
 
--- Started on 2026-09-24 17:05:41
+-- Started on 2026-11-05 16:53:12
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -71,7 +71,8 @@ CREATE TABLE public.palavras (
     id_nicho integer NOT NULL,
     palavra character varying(100) NOT NULL,
     silaba character varying(100) NOT NULL,
-    cor character varying(100)
+    cor character varying(100),
+    img character varying(100)
 );
 
 
@@ -138,540 +139,540 @@ COPY public.nichos (id, nicho) FROM stdin;
 -- Data for Name: palavras; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.palavras (id_palavra, id_nicho, palavra, silaba, cor) FROM stdin;
-493	4	Luz	Luz	#FFFFFF
-106	1	abacate	a&ba&ca&te	#008000
-107	1	abacaxi	a&ba&ca&xi	#FFFF00
-108	1	acerola	a&ce&ro&la	#FF0000
-109	1	ameixa	a&mei&xa	#800080
-110	1	amora	a&mo&ra	#800080
-111	1	anana	a&na&na	#FFFF00
-112	1	araca	a&ra&ça	#FFFF00
-113	1	ata	a&ta	#008000
-114	1	avocado	a&vo&ca&do	#008000
-115	1	bacaba	ba&ca&ba	#800080
-116	1	bacuri	ba&cu&ri	#FFFF00
-117	1	banana	ba&na&na	#FFFF00
-118	1	biriba	bi&ri&ba	#FFFF00
-119	1	buriti	bu&ri&ti	#FFA500
-120	1	cacau	ca&cau	#A52A2A
-121	1	caju	ca&ju	#FF0000
-122	1	caqui	ca&qui	#FFA500
-123	1	carambola	ca&ram&bo&la	#FFFF00
-124	1	cereja	ce&re&ja	#FF0000
-125	1	cidra	ci&dra	#FFFF00
-126	1	coco	co&co	#A52A2A
-127	1	cupuaçu	cu&pu&a&çu	#A52A2A
-128	1	damasco	da&mas&co	#FFA500
-129	1	figo	fi&go	#800080
-130	1	framboesa	fram&bo&e&sa	#FF0000
-131	1	fruta-pão	fru&ta&pão	#008000
-132	1	goiaba	goi&a&ba	#008000
-133	1	graviola	gra&vi&o&la	#008000
-134	1	groselha	gro&se&lha	#FF0000
-135	1	jabuticaba	ja&bu&ti&ca&ba	#800080
-136	1	jaca	ja&ca	#FFFF00
-137	1	jenipapo	je&ni&pa&po	#008000
-138	1	kiwi	ki&wi	#A52A2A
-160	1	uva	u&va	#800080
-192	1	tucumã	tu&cu&mã	#FFA500
-193	1	umbu	um&bu	#008000
-194	1	uvaia	u&va&ia	#FFFF00
-195	1	veludo	ve&lu&do	#FF0000
-196	1	melão-de-são-caetano	me&lão&de&são&ca&e&ta&no	#008000
-197	1	physalis	phy&sa&lis	#FFA500
-198	1	longan	lon&gan	#A52A2A
-199	1	mangostão	man&gos&tão	#800080
-200	1	rambutã	ram&bu&tã	#FF0000
-201	1	tâmara	tâ&ma&ra	#A52A2A
-202	1	toranja	to&ran&ja	#FFA500
-203	1	kumquat	kum&quat	#FFA500
-204	1	nectarina	nec&ta&ri&na	#FFA500
-205	1	pomarrosa	po&ma&rro&sa	#FF0000
-206	1	tamarillo	ta&ma&ri&llo	#FF0000
-207	1	sapucaia	sa&pu&ca&ia	#A52A2A
-208	1	mangaba	man&ga&ba	#FFFF00
-209	1	araçá	a&ra&çá	#FF0000
-210	1	camu-camu	ca&mu&ca&mu	#FF0000
-215	2	Cachorro	Ca&chor&ro	#A52A2A
-216	2	Cachorro	Ca&chor&ro	#A52A2A
-217	2	Gato	Ga&to	#FFFFFF
-218	2	Cavalo	Ca&va&lo	#A52A2A
-219	2	Vaca	Va&ca	#000000
-220	2	Porco	Por&co	#FFC0CB
-221	2	Ovelha	O&ve&lha	#FFFFFF
-222	2	Cabra	Ca&bra	#FFFFFF
-223	2	Coelho	Co&e&lho	#FFFFFF
-224	2	Galinha	Ga&li&nha	#FFFFFF
-225	2	Galo	Ga&lo	#FF0000
-226	2	Pato	Pa&to	#FFFF00
-227	2	Ganso	Gan&so	#FFFFFF
-228	2	Peru	Pe&ru	#A52A2A
-229	2	Pavão	Pa&vão	#0000FF
-230	2	Águia	Á&guia	#A52A2A
-231	2	Falcão	Fal&cão	#A52A2A
-232	2	Coruja	Co&ru&ja	#A52A2A
-233	2	Papagaio	Pa&pa&gai&o	#008000
-234	2	Arara	A&ra&ra	#FF69B4
-235	2	Canário	Ca&ná&rio	#FFFF00
-236	2	Hamster	Hams&ter	#A52A2A
-237	2	Porquinho-da-índia	Por&qui&nho-da-ín&di&a	#FFFFFF
-238	2	Rato	Ra&to	#808080
-239	2	Camundongo	Ca&mun&don&go	#808080
-240	2	Morcego	Mor&ce&go	#000000
-241	2	Preguiça	Pre&gui&ça	#A52A2A
-242	2	Tucano	Tu&ca&no	#000000
-243	2	Pica-pau	Pi&ca-pau	#000000
-244	2	Beija-flor	Bei&ja-flor	#008000
-245	2	Rouxinol	Rou&xi&nol	#A52A2A
-246	2	Pombo	Pom&bo	#808080
-247	2	Periquito	Pe&ri&qui&to	#008000
-248	2	Calopsita	Ca&lop&si&ta	#FFFF00
-249	2	Maritaca	Ma&ri&ta&ca	#008000
-250	2	Garça	Gar&ça	#FFFFFF
-251	2	Pelicano	Pe&li&ca&no	#FFFFFF
-252	2	Cegonha	Ce&go&nha	#FFFFFF
-253	2	Urubu	U&ru&bu	#000000
-254	2	Condor	Con&dor	#000000
-255	2	Harpia	Har&pi&a	#808080
-256	2	Pardal	Par&dal	#A52A2A
-257	2	Bem-te-vi	Bem-te-vi	#FFFF00
-258	2	Sabiá	Sa&bi&á	#A52A2A
-259	2	Seriema	Se&ri&e&ma	#A52A2A
-260	2	Ema	E&ma	#A52A2A
-261	2	Jacutinga	Ja&cu&tin&ga	#000000
-262	2	Mutum	Mu&tum	#000000
-263	2	Codorna	Co&dor&na	#A52A2A
-264	2	Pato-real	Pa&to-real	#008000
-265	2	Rena	Re&na	#A52A2A
-266	2	Búfalo	Bú&fa&lo	#000000
-267	2	Bisão	Bi&são	#A52A2A
-268	2	Antílope	An&tí&lo&pe	#A52A2A
-269	2	Gazela	Ga&ze&la	#A52A2A
-270	2	Gnu	Gnu	#A52A2A
-271	2	Iaque	I&a&que	#000000
-272	2	Lhama	Lha&ma	#A52A2A
-273	2	Alpaca	Al&pa&ca	#FFFFFF
-274	2	Mula	Mu&la	#A52A2A
-275	2	Jumento	Ju&men&to	#808080
-276	2	Doninha	Do&ni&nha	#A52A2A
-277	2	Suricato	Su&ri&ca&to	#A52A2A
-278	2	Guaxinim	Guax&inim	#808080
-279	2	Gambá	Gam&bá	#000000
-280	2	Puma	Pu&ma	#A52A2A
-281	2	Jaguar	Ja&guar	#FFFF00
-282	2	Lince	Lin&ce	#A52A2A
-283	2	Chacal	Cha&cal	#A52A2A
-284	2	Coiote	Co&io&te	#A52A2A
-285	2	Texugo	Te&xu&go	#000000
-286	2	Esquilo-voador	Es&qui&lo-vo&a&dor	#A52A2A
-287	2	Porco-espinho	Por&co-es&pi&nho	#A52A2A
-288	2	Ouriço	Ou&ri&ço	#A52A2A
-289	2	Pangolim	Pan&go&lim	#A52A2A
-290	2	Tamanduá-bandeira	Ta&man&du&á-ban&dei&ra	#000000
-291	2	Quati	Qua&ti	#A52A2A
-292	2	Cutia	Cu&ti&a	#A52A2A
-293	2	Preá	Pre&á	#A52A2A
-294	2	Mico	Mi&co	#A52A2A
-295	2	Bugio	Bu&gi&o	#A52A2A
-296	2	Babuíno	Ba&bu&í&no	#A52A2A
-297	2	Mandril	Man&dril	#FF69B4
-298	2	Sagui	Sa&gui	#808080
-299	2	Ornitorrinco	Or&ni&tor&rin&co	#A52A2A
-300	2	Equidna	E&qui&d&na	#A52A2A
-301	2	Marmota	Mar&mo&ta	#A52A2A
-302	2	Doninha	Do&ni&nha	#A52A2A
-303	2	Furão	Fu&rão	#A52A2A
-304	2	Cangambá	Can&gam&bá	#000000
-305	2	Degu	De&gu	#A52A2A
-139	1	laranja	la&ran&ja	#FFA500
-140	1	lichia	li&chi&a	#FF0000
-141	1	limão	li&mão	#008000
-142	1	maçã	ma&çã	#FF0000
-143	1	mamão	ma&mão	#FFA500
-144	1	manga	man&ga	#FFFF00
-145	1	mangaba	man&ga&ba	#FFFF00
-146	1	maracujá	ma&ra&cu&já	#FFFF00
-147	1	melancia	me&lan&ci&a	#008000
-148	1	melão	me&lão	#FFFF00
-149	1	mexerica	me&xe&ri&ca	#FFA500
-150	1	morango	mo&ran&go	#FF0000
-151	1	nectarina	nec&ta&ri&na	#FFA500
-152	1	nêspera	nês&pe&ra	#FFA500
-153	1	pêssego	pês&se&go	#FFA500
-154	1	pitanga	pi&tan&ga	#FF0000
-155	1	pitaya	pi&ta&ya	#FFC0CB
-156	1	pitomba	pi&tom&ba	#FFFF00
-157	1	romã	ro&mã	#FF0000
-158	1	tamarindo	ta&ma&rin&do	#A52A2A
-159	1	tangerina	tan&ge&ri&na	#FFA500
-161	1	açaí	a&ça&í	#800080
-162	1	bacuri	ba&cu&ri	#FFFF00
-163	1	cambuci	cam&bu&ci	#008000
-164	1	cajá	ca&já	#FFFF00
-165	1	cajamanga	ca&ja&man&ga	#FFFF00
-166	1	calabura	ca&la&bu&ra	#FF0000
-167	1	cambucá	cam&bu&cá	#FFFF00
-168	1	canistel	ca&nis&tel	#FFFF00
-169	1	castanha	cas&ta&nha	#A52A2A
-170	1	cereja-do-rio-grande	ce&re&ja&do&ri&o&gran&de	#FF0000
-171	1	cupuacu	cu&pu&a&cu	#A52A2A
-172	1	dióspiro	di&ós&pi&ro	#FFA500
-173	1	embaúba	em&ba&ú&ba	#008000
-174	1	fruta-do-conde	fru&ta&do&con&de	#008000
-175	1	grumixama	gru&mi&xa&ma	#800080
-176	1	guabiroba	gua&bi&ro&ba	#FFFF00
-177	1	guaraná	gua&ra&ná	#FF0000
-178	1	ingá	in&gá	#008000
-179	1	jambo	jam&bo	#FF0000
-180	1	jambolão	jam&bo&lão	#800080
-181	1	jaracatiá	ja&ra&ca&ti&á	#FFA500
-182	1	juçara	ju&ça&ra	#800080
-183	1	jurubeba	ju&ru&be&ba	#008000
-184	1	marmelo	mar&me&lo	#FFFF00
-185	1	murici	mu&ri&ci	#FFFF00
-186	1	pequi	pe&qui	#FFFF00
-187	1	pinha	pi&nha	#008000
-188	1	pistache	pis&ta&che	#008000
-189	1	pomelo	po&me&lo	#FFFF00
-190	1	sapoti	sa&po&ti	#A52A2A
-191	1	seriguela	se&ri&gue&la	#FF0000
-306	2	Chinchila	Chin&chi&la	#808080
-307	2	Castor	Cas&tor	#A52A2A
-308	2	Ariranha	A&ri&ra&nha	#A52A2A
-309	2	Furão	Fu&rão	#A52A2A
-310	2	Axolote	A&xo&lo&te	#FFC0CB
-311	2	Salamandra	Sa&la&man&dra	#FFA500
-312	2	Lagartixa	La&gar&ti&xa	#A52A2A
-313	2	Gecko	Ge&cko	#008000
-314	2	Teiú	Te&i&ú	#A52A2A
-315	2	Cágado	Cá&ga&do	#008000
-316	2	Jabuti	Ja&bu&ti	#A52A2A
-317	2	Cobra-coral	Co&bra-co&ral	#FF0000
-318	2	Cascavel	Cas&ca&vel	#A52A2A
-319	2	Sucuri	Su&cu&ri	#008000
-320	2	Naja	Na&ja	#A52A2A
-321	2	Mamba	Mam&ba	#008000
-322	2	Lagarto-teiú	La&gar&to-te&i&ú	#A52A2A
-323	3	Vermelho	Ver&me&lho	#FF0000
-324	3	Azul	A&zul	#0000FF
-325	3	Amarelo	A&ma&re&lo	#FFFF00
-326	3	Verde	Ver&de	#008000
-327	3	Laranja	La&ran&ja	#FFA500
-328	3	Roxo	Ro&xo	#800080
-329	3	Rosa	Ro&sa	#FFC0CB
-330	3	Marrom	Ma&rrom	#A52A2A
-331	3	Preto	Pre&to	#000000
-332	3	Branco	Bran&co	#FFFFFF
-333	3	Cinza	Cin&za	#808080
-334	3	Bege	Be&ge	#F5F5DC
-335	3	Dourado	Dou&ra&do	#FFD700
-336	3	Prateado	Pra&te&a&do	#C0C0C0
-337	3	Turquesa	Tur&que&sa	#40E0D0
-338	3	Violeta	Vi&o&le&ta	#EE82EE
-339	3	Lilás	Li&lás	#C8A2C8
-340	3	Magenta	Ma&gen&ta	#FF00FF
-341	3	Ciano	Ci&a&no	#00FFFF
-342	3	Índigo	Ín&di&go	#4B0082
-343	3	Bordô	Bor&dô	#800020
-344	3	Creme	Cre&me	#FFFDD0
-345	3	Marfim	Mar&fim	#FFFFF0
-346	3	Coral	Co&ral	#FF7F50
-347	3	Salmão	Sal&mão	#FA8072
-348	3	Oliva	O&li&va	#808000
-349	3	Mostarda	Mos&tar&da	#FFDB58
-350	3	Cáqui	Cá&qui	#F0E68C
-351	3	Lavanda	La&van&da	#E6E6FA
-352	3	Pêssego	Pês&se&go	#FFE5B4
-353	3	Terracota	Ter&ra&co&ta	#E2725B
-354	3	Ameixa	A&mei&xa	#8E4585
-355	3	Uva	U&va	#6F2DA8
-356	3	Vinho	Vi&nho	#722F37
-357	3	Cereja	Ce&re&ja	#DE3163
-358	3	Ferrugem	Fer&ru&gem	#B7410E
-359	3	Cobre	Co&bre	#B87333
-360	3	Bronze	Bron&ze	#CD7F32
-361	3	Âmbar	Âm&bar	#FFBF00
-362	3	Ocre	O&cre	#CC7722
-363	3	Mostarda	Mos&tar&da	#FFDB58
-364	3	Esmeralda	Es&me&ral&da	#50C878
-365	3	Safira	Sa&fi&ra	#0F52BA
-366	3	Rubi	Ru&bi	#E0115F
-367	3	Topázio	To&pá&zi&o	#FFC87C
-368	3	Jade	Ja&de	#00A86B
-369	3	Anil	A&nil	#4B0082
-370	3	Açafrão	A&ça&frão	#F4C430
-371	3	Canela	Ca&ne&la	#D2691E
-372	3	Caramelo	Ca&ra&me&lo	#C68E17
-373	3	Chocolate	Cho&co&la&te	#7B3F00
-374	3	Café	Ca&fé	#6F4E37
-375	3	Areia	A&re&ia	#C2B280
-376	3	Pérola	Pé&ro&la	#EAE0C8
-377	3	Fúcsia	Fúc&si&a	#FF00FF
-378	3	Framboesa	Fram&bo&e&sa	#E30B5C
-379	3	Morango	Mo&ran&go	#FC5A8D
-380	3	Melancia	Me&lan&ci&a	#FC6C85
-381	3	Abóbora	A&bó&bo&ra	#FF7518
-382	3	Tangerina	Tan&ge&ri&na	#F28500
-383	3	Limão	Li&mão	#BFFF00
-384	3	Maçã	Ma&çã	#8DB600
-385	3	Menta	Men&ta	#98FF98
-386	3	Hortelã	Hor&te&lã	#3EB489
-387	3	Musgo	Mus&go	#8A9A5B
-388	3	Pistache	Pis&ta&che	#93C572
-389	3	Abacate	A&ba&ca&te	#568203
-390	3	Azeitona	A&zei&to&na	#808000
-391	3	Esmeralda	Es&me&ral&da	#50C878
-392	3	Marinho	Ma&ri&nho	#000080
-393	3	Celeste	Ce&les&te	#87CEEB
-394	3	Bebê	Be&bê	#ADD8E6
-395	3	Royal	Ro&yal	#00008B
-396	3	Anilado	A&ni&la&do	#0000FF
-397	3	Neon	Ne&on	#008000
-398	3	Pistache	Pis&ta&che	#90EE90
-399	3	Abacaxi	A&ba&ca&xi	#FFFF00
-400	3	Ouro	Ou&ro	#FFD700
-401	3	Champanhe	Cham&pa&nhe	#F5F5DC
-402	3	Nude	Nu&de	#F5F5DC
-403	3	Carmin	Car&min	#FF0000
-404	3	Escarlate	Es&car&la&te	#FF0000
-405	3	Carmim	Car&mim	#FF0000
-406	3	Borgonha	Bor&go&nha	#722F37
-407	3	Grená	Gre&ná	#8B0000
-408	3	Púrpura	Púr&pu&ra	#800080
-409	3	Ametista	A&me&tis&ta	#800080
-410	3	Orquídea	Or&quí&de&a	#800080
-411	3	Malva	Mal&va	#D8BFD8
-412	3	Fandango	Fan&dan&go	#FFC0CB
-413	3	Salmão-claro	Sal&mão-cla&ro	#FFB6C1
-414	3	Carmim-claro	Car&mim-cla&ro	#FF6666
-415	3	Azul-celeste	A&zul-ce&les&te	#ADD8E6
-416	3	Verde-água	Ver&de-á&gua	#90EE90
-417	3	Verde-musgo	Ver&de-mus&go	#006400
-418	3	Amarelo-canário	A&ma&re&lo-ca&ná&rio	#FFFF00
-419	3	Cinza-chumbo	Cin&za-chum&bo	#404040
-420	3	Cinza-prata	Cin&za-pra&ta	#C0C0C0
-421	3	Branco-gelo	Bran&co-ge&lo	#FFFFFF
-422	3	Preto-fosco	Pre&to-fos&co	#000000
-423	3	Marrom-claro	Ma&rrom-cla&ro	#D2B48C
-424	3	Marrom-escuro	Ma&rrom-es&cu&ro	#654321
-425	3	Bege-claro	Be&ge-cla&ro	#FFF5E1
-426	3	Creme-claro	Cre&me-cla&ro	#FFFDD0
-427	4	Sol	Sol	#FFFF00
-428	4	Lua	Lu&a	#808080
-429	4	Terra	Ter&ra	#0000FF
-430	4	Marte	Mar&te	#FF0000
-431	4	Júpiter	Jú&pi&ter	#A52A2A
-432	4	Saturno	Sa&tur&no	#FFFF00
-433	4	Urano	U&ra&no	#0000FF
-434	4	Netuno	Nep&tu&no	#0000FF
-435	4	Mercúrio	Mer&cú&rio	#808080
-436	4	Vênus	Vê&nus	#FFFF00
-437	4	Plutão	Plu&tão	#808080
-438	4	Estrela	Es&tre&la	#FFFFFF
-439	4	Galáxia	Ga&lá&xia	#FF69B4
-440	4	Nebulosa	Ne&bu&lo&sa	#800080
-441	4	Cometa	Co&me&ta	#FFFFFF
-442	4	Asteroide	As&te&roi&de	#808080
-443	4	Meteoro	Me&te&o&ro	#FFA500
-444	4	Meteorito	Me&te&o&ri&to	#808080
-445	4	Buraco negro	Bu&ra&co&ne&gro	#000000
-446	4	Quasar	Qua&sar	#0000FF
-447	4	Pulsar	Pul&sar	#0000FF
-448	4	Supernova	Su&per&no&va	#FFFFFF
-449	4	Constelação	Cons&te&la&ção	#FFFFFF
-450	4	Andrômeda	An&drô&me&da	#800080
-451	4	Via Láctea	Vi&a&Lác&te&a	#FFFFFF
-452	4	Eclipse	E&clip&se	#000000
-453	4	Eclipse solar	E&clip&se&so&lar	#FFFF00
-454	4	Eclipse lunar	E&clip&se&lu&nar	#FF0000
-455	4	Órbita	Ór&bi&ta	#0000FF
-456	4	Gravidade	Gra&vi&da&de	#000000
-457	4	Astronauta	As&tro&nau&ta	#FFFFFF
-458	4	Foguete	Fo&gue&te	#C0C0C0
-459	4	Satélite	Sa&té&li&te	#C0C0C0
-460	4	Estação espacial	Es&ta&ção&es&pa&ci&al	#FFFFFF
-461	4	Telescópio	Te&les&có&pio	#C0C0C0
-462	4	Astronomia	As&tro&no&mi&a	#0000FF
-463	4	Cosmos	Cos&mos	#000000
-464	4	Universo	U&ni&ver&so	#FF69B4
-465	4	Espaço	Es&pa&ço	#000000
-466	4	Planeta	Pla&ne&ta	#0000FF
-467	4	Estrela cadente	Es&tre&la&ca&den&te	#FFFF00
-468	4	Estrela anã	Es&tre&la&a&nã	#FF0000
-469	4	Anã branca	A&nã&bran&ca	#FFFFFF
-470	4	Anã vermelha	A&nã&ver&me&lha	#FF0000
-471	4	Gigante vermelha	Gi&gan&te&ver&me&lha	#FF0000
-472	4	Gigante azul	Gi&gan&te&a&zul	#0000FF
-473	4	Anel planetário	A&nel&pla&ne&tá&rio	#FFFF00
-474	4	Atmosfera	At&mos&fe&ra	#0000FF
-475	4	Cinturão de asteroides	Cin&tu&rão&de&as&te&roi&des	#808080
-476	4	Cinturão de Kuiper	Cin&tu&rão&de&Kui&per	#0000FF
-477	4	Nuvem de Oort	Nu&vem&de&Oort	#FFFFFF
-478	4	Lua cheia	Lu&a&chei&a	#FFFFFF
-479	4	Lua nova	Lu&a&no&va	#000000
-480	4	Lua crescente	Lu&a&cres&cen&te	#FFFF00
-481	4	Lua minguante	Lu&a&min&gu&an&te	#808080
-482	4	Cratera	Cra&te&ra	#808080
-483	4	Solo lunar	So&lo&lu&nar	#808080
-484	4	Mar lunar	Mar&lu&nar	#808080
-485	4	Anel de Saturno	A&nel&de&Sa&tur&no	#FFFF00
-486	4	Mancha solar	Man&cha&so&lar	#000000
-487	4	Vento solar	Ven&to&so&lar	#FFFF00
-488	4	Tempestade solar	Tem&pes&ta&de&so&lar	#FFA500
-489	4	Aurora	Au&ro&ra	#008000
-490	4	Aurora boreal	Au&ro&ra&bo&re&al	#008000
-491	4	Aurora austral	Au&ro&ra&aus&tral	#800080
-492	4	Radiação	Ra&di&a&ção	#800080
-494	4	Fóton	Fó&ton	#FFFFFF
-495	4	Vácuo	Vá&cu&o	#000000
-496	4	Dimensão	Di&men&são	#800080
-497	4	Espaço-tempo	Es&pa&ço&tem&po	#000000
-498	4	Matéria escura	Ma&té&ria&es&cu&ra	#000000
-499	4	Energia escura	E&ner&gi&a&es&cu&ra	#800080
-500	4	Antimatéria	An&ti&ma&té&ria	#0000FF
-501	4	Galáxia espiral	Ga&lá&xia&es&pi&ral	#0000FF
-502	4	Galáxia elíptica	Ga&lá&xia&e&líp&ti&ca	#FFFF00
-503	4	Aglomerado estelar	A&glo&me&ra&do&es&te&lar	#FFFFFF
-504	4	Aglomerado de galáxias	A&glo&me&ra&do&de&ga&lá&xi&as	#FF69B4
-505	4	Estrela de nêutrons	Es&tre&la&de&nêu&trons	#0000FF
-506	4	Anã marrom	A&nã&ma&rrom	#A52A2A
-507	4	Anã negra	A&nã&ne&gra	#000000
-508	4	Buraco de minhoca	Bu&ra&co&de&mi&nho&ca	#800080
-509	4	Horizonte de eventos	Ho&ri&zon&te&de&e&ven&tos	#000000
-510	4	Singularidade	Sin&gu&la&ri&da&de	#000000
-511	4	Magnetar	Mag&ne&tar	#0000FF
-512	4	Blazar	Bla&zar	#800080
-513	4	Radiação cósmica	Ra&di&a&ção&cós&mi&ca	#FFFFFF
-514	4	Raio cósmico	Rai&o&cós&mi&co	#0000FF
-515	4	Plasma	Plas&ma	#FFA500
-516	4	Hidrogênio	Hi&dro&gê&nio	#FFFFFF
-517	4	Hélio	Hé&lio	#FFFF00
-518	4	Oxigênio	O&xi&gê&nio	#FF0000
-519	4	Nitrogênio	Ni&tro&gê&nio	#0000FF
-520	4	Carbono	Car&bo&no	#000000
-521	4	Superaglomerado	Su&per&a&glo&me&ra&do	#FF69B4
-522	4	Filamento cósmico	Fi&la&men&to&cós&mi&co	#FFFFFF
-523	4	Hubble	Hub&ble	#C0C0C0
-524	4	James Webb	Ja&mes&Webb	#FFD700
-525	4	ISS	ISS	#FFFFFF
-526	4	Rover	Ro&ver	#C0C0C0
-527	4	Módulo lunar	Mó&du&lo&lu&nar	#C0C0C0
-528	4	Traje espacial	Tra&je&es&pa&ci&al	#FFFFFF
-529	4	Base lunar	Ba&se&lu&nar	#808080
-530	4	Colônia espacial	Co&lô&ni&a&es&pa&ci&al	#FFFFFF
-531	4	Exoplaneta	Ex&o&pla&ne&ta	#0000FF
-532	4	Planeta anão	Pla&ne&ta&a&não	#808080
-533	4	Protoplaneta	Pro&to&pla&ne&ta	#A52A2A
-534	4	Disco protoplanetário	Dis&co&pro&to&pla&ne&tá&rio	#FFA500
-535	4	Sol	Sol	#FFFF00
-536	4	Lua	Lu&a	#808080
-537	4	Terra	Ter&ra	#0000FF
-538	4	Marte	Mar&te	#FF0000
-539	4	Júpiter	Jú&pi&ter	#A52A2A
-540	4	Saturno	Sa&tur&no	#FFFF00
-541	4	Urano	U&ra&no	#0000FF
-542	4	Netuno	Nep&tu&no	#0000FF
-543	4	Mercúrio	Mer&cú&rio	#808080
-544	4	Vênus	Vê&nus	#FFFF00
-545	4	Plutão	Plu&tão	#808080
-546	4	Estrela	Es&tre&la	#FFFFFF
-547	4	Galáxia	Ga&lá&xia	#FF69B4
-548	4	Nebulosa	Ne&bu&lo&sa	#800080
-549	4	Cometa	Co&me&ta	#FFFFFF
-550	4	Asteroide	As&te&roi&de	#808080
-551	4	Meteoro	Me&te&o&ro	#FFA500
-552	4	Meteorito	Me&te&o&ri&to	#808080
-553	4	Buraco negro	Bu&ra&co&ne&gro	#000000
-554	4	Quasar	Qua&sar	#0000FF
-555	4	Pulsar	Pul&sar	#0000FF
-556	4	Supernova	Su&per&no&va	#FFFFFF
-557	4	Constelação	Cons&te&la&ção	#FFFFFF
-558	4	Andrômeda	An&drô&me&da	#800080
-559	4	Via Láctea	Vi&a&Lác&te&a	#FFFFFF
-560	4	Eclipse	E&clip&se	#000000
-561	4	Eclipse solar	E&clip&se&so&lar	#FFFF00
-562	4	Eclipse lunar	E&clip&se&lu&nar	#FF0000
-563	4	Órbita	Ór&bi&ta	#0000FF
-564	4	Gravidade	Gra&vi&da&de	#000000
-565	4	Astronauta	As&tro&nau&ta	#FFFFFF
-566	4	Foguete	Fo&gue&te	#C0C0C0
-567	4	Satélite	Sa&té&li&te	#C0C0C0
-568	4	Estação espacial	Es&ta&ção&es&pa&ci&al	#FFFFFF
-569	4	Telescópio	Te&les&có&pio	#C0C0C0
-570	4	Astronomia	As&tro&no&mi&a	#0000FF
-571	4	Cosmos	Cos&mos	#000000
-572	4	Universo	U&ni&ver&so	#FF69B4
-573	4	Espaço	Es&pa&ço	#000000
-574	4	Planeta	Pla&ne&ta	#0000FF
-575	4	Estrela cadente	Es&tre&la&ca&den&te	#FFFF00
-576	4	Estrela anã	Es&tre&la&a&nã	#FF0000
-577	4	Anã branca	A&nã&bran&ca	#FFFFFF
-578	4	Anã vermelha	A&nã&ver&me&lha	#FF0000
-579	4	Gigante vermelha	Gi&gan&te&ver&me&lha	#FF0000
-580	4	Gigante azul	Gi&gan&te&a&zul	#0000FF
-581	4	Anel planetário	A&nel&pla&ne&tá&rio	#FFFF00
-582	4	Atmosfera	At&mos&fe&ra	#0000FF
-583	4	Cinturão de asteroides	Cin&tu&rão&de&as&te&roi&des	#808080
-584	4	Cinturão de Kuiper	Cin&tu&rão&de&Kui&per	#0000FF
-585	4	Nuvem de Oort	Nu&vem&de&Oort	#FFFFFF
-586	4	Lua cheia	Lu&a&chei&a	#FFFFFF
-587	4	Lua nova	Lu&a&no&va	#000000
-588	4	Lua crescente	Lu&a&cres&cen&te	#FFFF00
-589	4	Lua minguante	Lu&a&min&gu&an&te	#808080
-590	4	Cratera	Cra&te&ra	#808080
-591	4	Solo lunar	So&lo&lu&nar	#808080
-592	4	Mar lunar	Mar&lu&nar	#808080
-593	4	Anel de Saturno	A&nel&de&Sa&tur&no	#FFFF00
-594	4	Mancha solar	Man&cha&so&lar	#000000
-595	4	Vento solar	Ven&to&so&lar	#FFFF00
-596	4	Tempestade solar	Tem&pes&ta&de&so&lar	#FFA500
-597	4	Aurora	Au&ro&ra	#008000
-598	4	Aurora boreal	Au&ro&ra&bo&re&al	#008000
-599	4	Aurora austral	Au&ro&ra&aus&tral	#800080
-600	4	Radiação	Ra&di&a&ção	#800080
-601	4	Luz	Luz	#FFFFFF
-602	4	Fóton	Fó&ton	#FFFFFF
-603	4	Vácuo	Vá&cu&o	#000000
-604	4	Dimensão	Di&men&são	#800080
-605	4	Espaço-tempo	Es&pa&ço&tem&po	#000000
-606	4	Matéria escura	Ma&té&ria&es&cu&ra	#000000
-607	4	Energia escura	E&ner&gi&a&es&cu&ra	#800080
-608	4	Antimatéria	An&ti&ma&té&ria	#0000FF
-609	4	Galáxia espiral	Ga&lá&xia&es&pi&ral	#0000FF
-610	4	Galáxia elíptica	Ga&lá&xia&e&líp&ti&ca	#FFFF00
-611	4	Aglomerado estelar	A&glo&me&ra&do&es&te&lar	#FFFFFF
-612	4	Aglomerado de galáxias	A&glo&me&ra&do&de&ga&lá&xi&as	#FF69B4
-613	4	Estrela de nêutrons	Es&tre&la&de&nêu&trons	#0000FF
-614	4	Anã marrom	A&nã&ma&rrom	#A52A2A
-615	4	Anã negra	A&nã&ne&gra	#000000
-616	4	Buraco de minhoca	Bu&ra&co&de&mi&nho&ca	#800080
-617	4	Horizonte de eventos	Ho&ri&zon&te&de&e&ven&tos	#000000
-618	4	Singularidade	Sin&gu&la&ri&da&de	#000000
-619	4	Magnetar	Mag&ne&tar	#0000FF
-620	4	Blazar	Bla&zar	#800080
-621	4	Radiação cósmica	Ra&di&a&ção&cós&mi&ca	#FFFFFF
-622	4	Raio cósmico	Rai&o&cós&mi&co	#0000FF
-623	4	Plasma	Plas&ma	#FFA500
-624	4	Hidrogênio	Hi&dro&gê&nio	#FFFFFF
-625	4	Hélio	Hé&lio	#FFFF00
-626	4	Oxigênio	O&xi&gê&nio	#FF0000
-627	4	Nitrogênio	Ni&tro&gê&nio	#0000FF
-628	4	Carbono	Car&bo&no	#000000
-629	4	Superaglomerado	Su&per&a&glo&me&ra&do	#FF69B4
-630	4	Filamento cósmico	Fi&la&men&to&cós&mi&co	#FFFFFF
-631	4	Hubble	Hub&ble	#C0C0C0
-632	4	James Webb	Ja&mes&Webb	#FFD700
-633	4	ISS	ISS	#FFFFFF
-634	4	Rover	Ro&ver	#C0C0C0
-635	4	Módulo lunar	Mó&du&lo&lu&nar	#C0C0C0
-636	4	Traje espacial	Tra&je&es&pa&ci&al	#FFFFFF
-637	4	Base lunar	Ba&se&lu&nar	#808080
-638	4	Colônia espacial	Co&lô&ni&a&es&pa&ci&al	#FFFFFF
-639	4	Exoplaneta	Ex&o&pla&ne&ta	#0000FF
-640	4	Planeta anão	Pla&ne&ta&a&não	#808080
-641	4	Protoplaneta	Pro&to&pla&ne&ta	#A52A2A
-642	4	Disco protoplanetário	Dis&co&pro&to&pla&ne&tá&rio	#FFA500
+COPY public.palavras (id_palavra, id_nicho, palavra, silaba, cor, img) FROM stdin;
+493	4	Luz	Luz	#FFFFFF	\N
+106	1	abacate	a&ba&ca&te	#008000	\N
+107	1	abacaxi	a&ba&ca&xi	#FFFF00	\N
+108	1	acerola	a&ce&ro&la	#FF0000	\N
+109	1	ameixa	a&mei&xa	#800080	\N
+110	1	amora	a&mo&ra	#800080	\N
+111	1	anana	a&na&na	#FFFF00	\N
+112	1	araca	a&ra&ça	#FFFF00	\N
+113	1	ata	a&ta	#008000	\N
+114	1	avocado	a&vo&ca&do	#008000	\N
+115	1	bacaba	ba&ca&ba	#800080	\N
+116	1	bacuri	ba&cu&ri	#FFFF00	\N
+117	1	banana	ba&na&na	#FFFF00	\N
+118	1	biriba	bi&ri&ba	#FFFF00	\N
+119	1	buriti	bu&ri&ti	#FFA500	\N
+120	1	cacau	ca&cau	#A52A2A	\N
+121	1	caju	ca&ju	#FF0000	\N
+122	1	caqui	ca&qui	#FFA500	\N
+123	1	carambola	ca&ram&bo&la	#FFFF00	\N
+124	1	cereja	ce&re&ja	#FF0000	\N
+125	1	cidra	ci&dra	#FFFF00	\N
+126	1	coco	co&co	#A52A2A	\N
+127	1	cupuaçu	cu&pu&a&çu	#A52A2A	\N
+128	1	damasco	da&mas&co	#FFA500	\N
+129	1	figo	fi&go	#800080	\N
+130	1	framboesa	fram&bo&e&sa	#FF0000	\N
+131	1	fruta-pão	fru&ta&pão	#008000	\N
+132	1	goiaba	goi&a&ba	#008000	\N
+133	1	graviola	gra&vi&o&la	#008000	\N
+134	1	groselha	gro&se&lha	#FF0000	\N
+135	1	jabuticaba	ja&bu&ti&ca&ba	#800080	\N
+136	1	jaca	ja&ca	#FFFF00	\N
+137	1	jenipapo	je&ni&pa&po	#008000	\N
+138	1	kiwi	ki&wi	#A52A2A	\N
+160	1	uva	u&va	#800080	\N
+192	1	tucumã	tu&cu&mã	#FFA500	\N
+193	1	umbu	um&bu	#008000	\N
+194	1	uvaia	u&va&ia	#FFFF00	\N
+195	1	veludo	ve&lu&do	#FF0000	\N
+196	1	melão-de-são-caetano	me&lão&de&são&ca&e&ta&no	#008000	\N
+197	1	physalis	phy&sa&lis	#FFA500	\N
+198	1	longan	lon&gan	#A52A2A	\N
+199	1	mangostão	man&gos&tão	#800080	\N
+200	1	rambutã	ram&bu&tã	#FF0000	\N
+201	1	tâmara	tâ&ma&ra	#A52A2A	\N
+202	1	toranja	to&ran&ja	#FFA500	\N
+203	1	kumquat	kum&quat	#FFA500	\N
+204	1	nectarina	nec&ta&ri&na	#FFA500	\N
+205	1	pomarrosa	po&ma&rro&sa	#FF0000	\N
+206	1	tamarillo	ta&ma&ri&llo	#FF0000	\N
+207	1	sapucaia	sa&pu&ca&ia	#A52A2A	\N
+208	1	mangaba	man&ga&ba	#FFFF00	\N
+209	1	araçá	a&ra&çá	#FF0000	\N
+210	1	camu-camu	ca&mu&ca&mu	#FF0000	\N
+215	2	Cachorro	Ca&chor&ro	#A52A2A	\N
+216	2	Cachorro	Ca&chor&ro	#A52A2A	\N
+217	2	Gato	Ga&to	#FFFFFF	\N
+218	2	Cavalo	Ca&va&lo	#A52A2A	\N
+219	2	Vaca	Va&ca	#000000	\N
+220	2	Porco	Por&co	#FFC0CB	\N
+221	2	Ovelha	O&ve&lha	#FFFFFF	\N
+222	2	Cabra	Ca&bra	#FFFFFF	\N
+223	2	Coelho	Co&e&lho	#FFFFFF	\N
+224	2	Galinha	Ga&li&nha	#FFFFFF	\N
+225	2	Galo	Ga&lo	#FF0000	\N
+226	2	Pato	Pa&to	#FFFF00	\N
+227	2	Ganso	Gan&so	#FFFFFF	\N
+228	2	Peru	Pe&ru	#A52A2A	\N
+229	2	Pavão	Pa&vão	#0000FF	\N
+230	2	Águia	Á&guia	#A52A2A	\N
+231	2	Falcão	Fal&cão	#A52A2A	\N
+232	2	Coruja	Co&ru&ja	#A52A2A	\N
+233	2	Papagaio	Pa&pa&gai&o	#008000	\N
+234	2	Arara	A&ra&ra	#FF69B4	\N
+235	2	Canário	Ca&ná&rio	#FFFF00	\N
+236	2	Hamster	Hams&ter	#A52A2A	\N
+237	2	Porquinho-da-índia	Por&qui&nho-da-ín&di&a	#FFFFFF	\N
+238	2	Rato	Ra&to	#808080	\N
+239	2	Camundongo	Ca&mun&don&go	#808080	\N
+240	2	Morcego	Mor&ce&go	#000000	\N
+241	2	Preguiça	Pre&gui&ça	#A52A2A	\N
+242	2	Tucano	Tu&ca&no	#000000	\N
+243	2	Pica-pau	Pi&ca-pau	#000000	\N
+244	2	Beija-flor	Bei&ja-flor	#008000	\N
+245	2	Rouxinol	Rou&xi&nol	#A52A2A	\N
+246	2	Pombo	Pom&bo	#808080	\N
+247	2	Periquito	Pe&ri&qui&to	#008000	\N
+248	2	Calopsita	Ca&lop&si&ta	#FFFF00	\N
+249	2	Maritaca	Ma&ri&ta&ca	#008000	\N
+250	2	Garça	Gar&ça	#FFFFFF	\N
+251	2	Pelicano	Pe&li&ca&no	#FFFFFF	\N
+252	2	Cegonha	Ce&go&nha	#FFFFFF	\N
+253	2	Urubu	U&ru&bu	#000000	\N
+254	2	Condor	Con&dor	#000000	\N
+255	2	Harpia	Har&pi&a	#808080	\N
+256	2	Pardal	Par&dal	#A52A2A	\N
+257	2	Bem-te-vi	Bem-te-vi	#FFFF00	\N
+258	2	Sabiá	Sa&bi&á	#A52A2A	\N
+259	2	Seriema	Se&ri&e&ma	#A52A2A	\N
+260	2	Ema	E&ma	#A52A2A	\N
+261	2	Jacutinga	Ja&cu&tin&ga	#000000	\N
+262	2	Mutum	Mu&tum	#000000	\N
+263	2	Codorna	Co&dor&na	#A52A2A	\N
+264	2	Pato-real	Pa&to-real	#008000	\N
+265	2	Rena	Re&na	#A52A2A	\N
+266	2	Búfalo	Bú&fa&lo	#000000	\N
+267	2	Bisão	Bi&são	#A52A2A	\N
+268	2	Antílope	An&tí&lo&pe	#A52A2A	\N
+269	2	Gazela	Ga&ze&la	#A52A2A	\N
+270	2	Gnu	Gnu	#A52A2A	\N
+271	2	Iaque	I&a&que	#000000	\N
+272	2	Lhama	Lha&ma	#A52A2A	\N
+273	2	Alpaca	Al&pa&ca	#FFFFFF	\N
+274	2	Mula	Mu&la	#A52A2A	\N
+275	2	Jumento	Ju&men&to	#808080	\N
+276	2	Doninha	Do&ni&nha	#A52A2A	\N
+277	2	Suricato	Su&ri&ca&to	#A52A2A	\N
+278	2	Guaxinim	Guax&inim	#808080	\N
+279	2	Gambá	Gam&bá	#000000	\N
+280	2	Puma	Pu&ma	#A52A2A	\N
+281	2	Jaguar	Ja&guar	#FFFF00	\N
+282	2	Lince	Lin&ce	#A52A2A	\N
+283	2	Chacal	Cha&cal	#A52A2A	\N
+284	2	Coiote	Co&io&te	#A52A2A	\N
+285	2	Texugo	Te&xu&go	#000000	\N
+286	2	Esquilo-voador	Es&qui&lo-vo&a&dor	#A52A2A	\N
+287	2	Porco-espinho	Por&co-es&pi&nho	#A52A2A	\N
+288	2	Ouriço	Ou&ri&ço	#A52A2A	\N
+289	2	Pangolim	Pan&go&lim	#A52A2A	\N
+290	2	Tamanduá-bandeira	Ta&man&du&á-ban&dei&ra	#000000	\N
+291	2	Quati	Qua&ti	#A52A2A	\N
+292	2	Cutia	Cu&ti&a	#A52A2A	\N
+293	2	Preá	Pre&á	#A52A2A	\N
+294	2	Mico	Mi&co	#A52A2A	\N
+295	2	Bugio	Bu&gi&o	#A52A2A	\N
+296	2	Babuíno	Ba&bu&í&no	#A52A2A	\N
+297	2	Mandril	Man&dril	#FF69B4	\N
+298	2	Sagui	Sa&gui	#808080	\N
+299	2	Ornitorrinco	Or&ni&tor&rin&co	#A52A2A	\N
+300	2	Equidna	E&qui&d&na	#A52A2A	\N
+301	2	Marmota	Mar&mo&ta	#A52A2A	\N
+302	2	Doninha	Do&ni&nha	#A52A2A	\N
+303	2	Furão	Fu&rão	#A52A2A	\N
+304	2	Cangambá	Can&gam&bá	#000000	\N
+305	2	Degu	De&gu	#A52A2A	\N
+139	1	laranja	la&ran&ja	#FFA500	\N
+140	1	lichia	li&chi&a	#FF0000	\N
+141	1	limão	li&mão	#008000	\N
+142	1	maçã	ma&çã	#FF0000	\N
+143	1	mamão	ma&mão	#FFA500	\N
+144	1	manga	man&ga	#FFFF00	\N
+145	1	mangaba	man&ga&ba	#FFFF00	\N
+146	1	maracujá	ma&ra&cu&já	#FFFF00	\N
+147	1	melancia	me&lan&ci&a	#008000	\N
+148	1	melão	me&lão	#FFFF00	\N
+149	1	mexerica	me&xe&ri&ca	#FFA500	\N
+150	1	morango	mo&ran&go	#FF0000	\N
+151	1	nectarina	nec&ta&ri&na	#FFA500	\N
+152	1	nêspera	nês&pe&ra	#FFA500	\N
+153	1	pêssego	pês&se&go	#FFA500	\N
+154	1	pitanga	pi&tan&ga	#FF0000	\N
+155	1	pitaya	pi&ta&ya	#FFC0CB	\N
+156	1	pitomba	pi&tom&ba	#FFFF00	\N
+157	1	romã	ro&mã	#FF0000	\N
+158	1	tamarindo	ta&ma&rin&do	#A52A2A	\N
+159	1	tangerina	tan&ge&ri&na	#FFA500	\N
+161	1	açaí	a&ça&í	#800080	\N
+162	1	bacuri	ba&cu&ri	#FFFF00	\N
+163	1	cambuci	cam&bu&ci	#008000	\N
+164	1	cajá	ca&já	#FFFF00	\N
+165	1	cajamanga	ca&ja&man&ga	#FFFF00	\N
+166	1	calabura	ca&la&bu&ra	#FF0000	\N
+167	1	cambucá	cam&bu&cá	#FFFF00	\N
+168	1	canistel	ca&nis&tel	#FFFF00	\N
+169	1	castanha	cas&ta&nha	#A52A2A	\N
+170	1	cereja-do-rio-grande	ce&re&ja&do&ri&o&gran&de	#FF0000	\N
+171	1	cupuacu	cu&pu&a&cu	#A52A2A	\N
+172	1	dióspiro	di&ós&pi&ro	#FFA500	\N
+173	1	embaúba	em&ba&ú&ba	#008000	\N
+174	1	fruta-do-conde	fru&ta&do&con&de	#008000	\N
+175	1	grumixama	gru&mi&xa&ma	#800080	\N
+176	1	guabiroba	gua&bi&ro&ba	#FFFF00	\N
+177	1	guaraná	gua&ra&ná	#FF0000	\N
+178	1	ingá	in&gá	#008000	\N
+179	1	jambo	jam&bo	#FF0000	\N
+180	1	jambolão	jam&bo&lão	#800080	\N
+181	1	jaracatiá	ja&ra&ca&ti&á	#FFA500	\N
+182	1	juçara	ju&ça&ra	#800080	\N
+183	1	jurubeba	ju&ru&be&ba	#008000	\N
+184	1	marmelo	mar&me&lo	#FFFF00	\N
+185	1	murici	mu&ri&ci	#FFFF00	\N
+186	1	pequi	pe&qui	#FFFF00	\N
+187	1	pinha	pi&nha	#008000	\N
+188	1	pistache	pis&ta&che	#008000	\N
+189	1	pomelo	po&me&lo	#FFFF00	\N
+190	1	sapoti	sa&po&ti	#A52A2A	\N
+191	1	seriguela	se&ri&gue&la	#FF0000	\N
+306	2	Chinchila	Chin&chi&la	#808080	\N
+307	2	Castor	Cas&tor	#A52A2A	\N
+308	2	Ariranha	A&ri&ra&nha	#A52A2A	\N
+309	2	Furão	Fu&rão	#A52A2A	\N
+310	2	Axolote	A&xo&lo&te	#FFC0CB	\N
+311	2	Salamandra	Sa&la&man&dra	#FFA500	\N
+312	2	Lagartixa	La&gar&ti&xa	#A52A2A	\N
+313	2	Gecko	Ge&cko	#008000	\N
+314	2	Teiú	Te&i&ú	#A52A2A	\N
+315	2	Cágado	Cá&ga&do	#008000	\N
+316	2	Jabuti	Ja&bu&ti	#A52A2A	\N
+317	2	Cobra-coral	Co&bra-co&ral	#FF0000	\N
+318	2	Cascavel	Cas&ca&vel	#A52A2A	\N
+319	2	Sucuri	Su&cu&ri	#008000	\N
+320	2	Naja	Na&ja	#A52A2A	\N
+321	2	Mamba	Mam&ba	#008000	\N
+322	2	Lagarto-teiú	La&gar&to-te&i&ú	#A52A2A	\N
+323	3	Vermelho	Ver&me&lho	#FF0000	\N
+324	3	Azul	A&zul	#0000FF	\N
+325	3	Amarelo	A&ma&re&lo	#FFFF00	\N
+326	3	Verde	Ver&de	#008000	\N
+327	3	Laranja	La&ran&ja	#FFA500	\N
+328	3	Roxo	Ro&xo	#800080	\N
+329	3	Rosa	Ro&sa	#FFC0CB	\N
+330	3	Marrom	Ma&rrom	#A52A2A	\N
+331	3	Preto	Pre&to	#000000	\N
+332	3	Branco	Bran&co	#FFFFFF	\N
+333	3	Cinza	Cin&za	#808080	\N
+334	3	Bege	Be&ge	#F5F5DC	\N
+335	3	Dourado	Dou&ra&do	#FFD700	\N
+336	3	Prateado	Pra&te&a&do	#C0C0C0	\N
+337	3	Turquesa	Tur&que&sa	#40E0D0	\N
+338	3	Violeta	Vi&o&le&ta	#EE82EE	\N
+339	3	Lilás	Li&lás	#C8A2C8	\N
+340	3	Magenta	Ma&gen&ta	#FF00FF	\N
+341	3	Ciano	Ci&a&no	#00FFFF	\N
+342	3	Índigo	Ín&di&go	#4B0082	\N
+343	3	Bordô	Bor&dô	#800020	\N
+344	3	Creme	Cre&me	#FFFDD0	\N
+345	3	Marfim	Mar&fim	#FFFFF0	\N
+346	3	Coral	Co&ral	#FF7F50	\N
+347	3	Salmão	Sal&mão	#FA8072	\N
+348	3	Oliva	O&li&va	#808000	\N
+349	3	Mostarda	Mos&tar&da	#FFDB58	\N
+350	3	Cáqui	Cá&qui	#F0E68C	\N
+351	3	Lavanda	La&van&da	#E6E6FA	\N
+352	3	Pêssego	Pês&se&go	#FFE5B4	\N
+353	3	Terracota	Ter&ra&co&ta	#E2725B	\N
+354	3	Ameixa	A&mei&xa	#8E4585	\N
+355	3	Uva	U&va	#6F2DA8	\N
+356	3	Vinho	Vi&nho	#722F37	\N
+357	3	Cereja	Ce&re&ja	#DE3163	\N
+358	3	Ferrugem	Fer&ru&gem	#B7410E	\N
+359	3	Cobre	Co&bre	#B87333	\N
+360	3	Bronze	Bron&ze	#CD7F32	\N
+361	3	Âmbar	Âm&bar	#FFBF00	\N
+362	3	Ocre	O&cre	#CC7722	\N
+363	3	Mostarda	Mos&tar&da	#FFDB58	\N
+364	3	Esmeralda	Es&me&ral&da	#50C878	\N
+365	3	Safira	Sa&fi&ra	#0F52BA	\N
+366	3	Rubi	Ru&bi	#E0115F	\N
+367	3	Topázio	To&pá&zi&o	#FFC87C	\N
+368	3	Jade	Ja&de	#00A86B	\N
+369	3	Anil	A&nil	#4B0082	\N
+370	3	Açafrão	A&ça&frão	#F4C430	\N
+371	3	Canela	Ca&ne&la	#D2691E	\N
+372	3	Caramelo	Ca&ra&me&lo	#C68E17	\N
+373	3	Chocolate	Cho&co&la&te	#7B3F00	\N
+374	3	Café	Ca&fé	#6F4E37	\N
+375	3	Areia	A&re&ia	#C2B280	\N
+376	3	Pérola	Pé&ro&la	#EAE0C8	\N
+377	3	Fúcsia	Fúc&si&a	#FF00FF	\N
+378	3	Framboesa	Fram&bo&e&sa	#E30B5C	\N
+379	3	Morango	Mo&ran&go	#FC5A8D	\N
+380	3	Melancia	Me&lan&ci&a	#FC6C85	\N
+381	3	Abóbora	A&bó&bo&ra	#FF7518	\N
+382	3	Tangerina	Tan&ge&ri&na	#F28500	\N
+383	3	Limão	Li&mão	#BFFF00	\N
+384	3	Maçã	Ma&çã	#8DB600	\N
+385	3	Menta	Men&ta	#98FF98	\N
+386	3	Hortelã	Hor&te&lã	#3EB489	\N
+387	3	Musgo	Mus&go	#8A9A5B	\N
+388	3	Pistache	Pis&ta&che	#93C572	\N
+389	3	Abacate	A&ba&ca&te	#568203	\N
+390	3	Azeitona	A&zei&to&na	#808000	\N
+391	3	Esmeralda	Es&me&ral&da	#50C878	\N
+392	3	Marinho	Ma&ri&nho	#000080	\N
+393	3	Celeste	Ce&les&te	#87CEEB	\N
+394	3	Bebê	Be&bê	#ADD8E6	\N
+395	3	Royal	Ro&yal	#00008B	\N
+396	3	Anilado	A&ni&la&do	#0000FF	\N
+397	3	Neon	Ne&on	#008000	\N
+398	3	Pistache	Pis&ta&che	#90EE90	\N
+399	3	Abacaxi	A&ba&ca&xi	#FFFF00	\N
+400	3	Ouro	Ou&ro	#FFD700	\N
+401	3	Champanhe	Cham&pa&nhe	#F5F5DC	\N
+402	3	Nude	Nu&de	#F5F5DC	\N
+403	3	Carmin	Car&min	#FF0000	\N
+404	3	Escarlate	Es&car&la&te	#FF0000	\N
+405	3	Carmim	Car&mim	#FF0000	\N
+406	3	Borgonha	Bor&go&nha	#722F37	\N
+407	3	Grená	Gre&ná	#8B0000	\N
+408	3	Púrpura	Púr&pu&ra	#800080	\N
+409	3	Ametista	A&me&tis&ta	#800080	\N
+410	3	Orquídea	Or&quí&de&a	#800080	\N
+411	3	Malva	Mal&va	#D8BFD8	\N
+412	3	Fandango	Fan&dan&go	#FFC0CB	\N
+413	3	Salmão-claro	Sal&mão-cla&ro	#FFB6C1	\N
+414	3	Carmim-claro	Car&mim-cla&ro	#FF6666	\N
+415	3	Azul-celeste	A&zul-ce&les&te	#ADD8E6	\N
+416	3	Verde-água	Ver&de-á&gua	#90EE90	\N
+417	3	Verde-musgo	Ver&de-mus&go	#006400	\N
+418	3	Amarelo-canário	A&ma&re&lo-ca&ná&rio	#FFFF00	\N
+419	3	Cinza-chumbo	Cin&za-chum&bo	#404040	\N
+420	3	Cinza-prata	Cin&za-pra&ta	#C0C0C0	\N
+421	3	Branco-gelo	Bran&co-ge&lo	#FFFFFF	\N
+422	3	Preto-fosco	Pre&to-fos&co	#000000	\N
+423	3	Marrom-claro	Ma&rrom-cla&ro	#D2B48C	\N
+424	3	Marrom-escuro	Ma&rrom-es&cu&ro	#654321	\N
+425	3	Bege-claro	Be&ge-cla&ro	#FFF5E1	\N
+426	3	Creme-claro	Cre&me-cla&ro	#FFFDD0	\N
+427	4	Sol	Sol	#FFFF00	\N
+428	4	Lua	Lu&a	#808080	\N
+429	4	Terra	Ter&ra	#0000FF	\N
+430	4	Marte	Mar&te	#FF0000	\N
+431	4	Júpiter	Jú&pi&ter	#A52A2A	\N
+432	4	Saturno	Sa&tur&no	#FFFF00	\N
+433	4	Urano	U&ra&no	#0000FF	\N
+434	4	Netuno	Nep&tu&no	#0000FF	\N
+435	4	Mercúrio	Mer&cú&rio	#808080	\N
+436	4	Vênus	Vê&nus	#FFFF00	\N
+437	4	Plutão	Plu&tão	#808080	\N
+438	4	Estrela	Es&tre&la	#FFFFFF	\N
+439	4	Galáxia	Ga&lá&xia	#FF69B4	\N
+440	4	Nebulosa	Ne&bu&lo&sa	#800080	\N
+441	4	Cometa	Co&me&ta	#FFFFFF	\N
+442	4	Asteroide	As&te&roi&de	#808080	\N
+443	4	Meteoro	Me&te&o&ro	#FFA500	\N
+444	4	Meteorito	Me&te&o&ri&to	#808080	\N
+445	4	Buraco negro	Bu&ra&co&ne&gro	#000000	\N
+446	4	Quasar	Qua&sar	#0000FF	\N
+447	4	Pulsar	Pul&sar	#0000FF	\N
+448	4	Supernova	Su&per&no&va	#FFFFFF	\N
+449	4	Constelação	Cons&te&la&ção	#FFFFFF	\N
+450	4	Andrômeda	An&drô&me&da	#800080	\N
+451	4	Via Láctea	Vi&a&Lác&te&a	#FFFFFF	\N
+452	4	Eclipse	E&clip&se	#000000	\N
+453	4	Eclipse solar	E&clip&se&so&lar	#FFFF00	\N
+454	4	Eclipse lunar	E&clip&se&lu&nar	#FF0000	\N
+455	4	Órbita	Ór&bi&ta	#0000FF	\N
+456	4	Gravidade	Gra&vi&da&de	#000000	\N
+457	4	Astronauta	As&tro&nau&ta	#FFFFFF	\N
+458	4	Foguete	Fo&gue&te	#C0C0C0	\N
+459	4	Satélite	Sa&té&li&te	#C0C0C0	\N
+460	4	Estação espacial	Es&ta&ção&es&pa&ci&al	#FFFFFF	\N
+461	4	Telescópio	Te&les&có&pio	#C0C0C0	\N
+462	4	Astronomia	As&tro&no&mi&a	#0000FF	\N
+463	4	Cosmos	Cos&mos	#000000	\N
+464	4	Universo	U&ni&ver&so	#FF69B4	\N
+465	4	Espaço	Es&pa&ço	#000000	\N
+466	4	Planeta	Pla&ne&ta	#0000FF	\N
+467	4	Estrela cadente	Es&tre&la&ca&den&te	#FFFF00	\N
+468	4	Estrela anã	Es&tre&la&a&nã	#FF0000	\N
+469	4	Anã branca	A&nã&bran&ca	#FFFFFF	\N
+470	4	Anã vermelha	A&nã&ver&me&lha	#FF0000	\N
+471	4	Gigante vermelha	Gi&gan&te&ver&me&lha	#FF0000	\N
+472	4	Gigante azul	Gi&gan&te&a&zul	#0000FF	\N
+473	4	Anel planetário	A&nel&pla&ne&tá&rio	#FFFF00	\N
+474	4	Atmosfera	At&mos&fe&ra	#0000FF	\N
+475	4	Cinturão de asteroides	Cin&tu&rão&de&as&te&roi&des	#808080	\N
+476	4	Cinturão de Kuiper	Cin&tu&rão&de&Kui&per	#0000FF	\N
+477	4	Nuvem de Oort	Nu&vem&de&Oort	#FFFFFF	\N
+478	4	Lua cheia	Lu&a&chei&a	#FFFFFF	\N
+479	4	Lua nova	Lu&a&no&va	#000000	\N
+480	4	Lua crescente	Lu&a&cres&cen&te	#FFFF00	\N
+481	4	Lua minguante	Lu&a&min&gu&an&te	#808080	\N
+482	4	Cratera	Cra&te&ra	#808080	\N
+483	4	Solo lunar	So&lo&lu&nar	#808080	\N
+484	4	Mar lunar	Mar&lu&nar	#808080	\N
+485	4	Anel de Saturno	A&nel&de&Sa&tur&no	#FFFF00	\N
+486	4	Mancha solar	Man&cha&so&lar	#000000	\N
+487	4	Vento solar	Ven&to&so&lar	#FFFF00	\N
+488	4	Tempestade solar	Tem&pes&ta&de&so&lar	#FFA500	\N
+489	4	Aurora	Au&ro&ra	#008000	\N
+490	4	Aurora boreal	Au&ro&ra&bo&re&al	#008000	\N
+491	4	Aurora austral	Au&ro&ra&aus&tral	#800080	\N
+492	4	Radiação	Ra&di&a&ção	#800080	\N
+494	4	Fóton	Fó&ton	#FFFFFF	\N
+495	4	Vácuo	Vá&cu&o	#000000	\N
+496	4	Dimensão	Di&men&são	#800080	\N
+497	4	Espaço-tempo	Es&pa&ço&tem&po	#000000	\N
+498	4	Matéria escura	Ma&té&ria&es&cu&ra	#000000	\N
+499	4	Energia escura	E&ner&gi&a&es&cu&ra	#800080	\N
+500	4	Antimatéria	An&ti&ma&té&ria	#0000FF	\N
+501	4	Galáxia espiral	Ga&lá&xia&es&pi&ral	#0000FF	\N
+502	4	Galáxia elíptica	Ga&lá&xia&e&líp&ti&ca	#FFFF00	\N
+503	4	Aglomerado estelar	A&glo&me&ra&do&es&te&lar	#FFFFFF	\N
+504	4	Aglomerado de galáxias	A&glo&me&ra&do&de&ga&lá&xi&as	#FF69B4	\N
+505	4	Estrela de nêutrons	Es&tre&la&de&nêu&trons	#0000FF	\N
+506	4	Anã marrom	A&nã&ma&rrom	#A52A2A	\N
+507	4	Anã negra	A&nã&ne&gra	#000000	\N
+508	4	Buraco de minhoca	Bu&ra&co&de&mi&nho&ca	#800080	\N
+509	4	Horizonte de eventos	Ho&ri&zon&te&de&e&ven&tos	#000000	\N
+510	4	Singularidade	Sin&gu&la&ri&da&de	#000000	\N
+511	4	Magnetar	Mag&ne&tar	#0000FF	\N
+512	4	Blazar	Bla&zar	#800080	\N
+513	4	Radiação cósmica	Ra&di&a&ção&cós&mi&ca	#FFFFFF	\N
+514	4	Raio cósmico	Rai&o&cós&mi&co	#0000FF	\N
+515	4	Plasma	Plas&ma	#FFA500	\N
+516	4	Hidrogênio	Hi&dro&gê&nio	#FFFFFF	\N
+517	4	Hélio	Hé&lio	#FFFF00	\N
+518	4	Oxigênio	O&xi&gê&nio	#FF0000	\N
+519	4	Nitrogênio	Ni&tro&gê&nio	#0000FF	\N
+520	4	Carbono	Car&bo&no	#000000	\N
+521	4	Superaglomerado	Su&per&a&glo&me&ra&do	#FF69B4	\N
+522	4	Filamento cósmico	Fi&la&men&to&cós&mi&co	#FFFFFF	\N
+523	4	Hubble	Hub&ble	#C0C0C0	\N
+524	4	James Webb	Ja&mes&Webb	#FFD700	\N
+525	4	ISS	ISS	#FFFFFF	\N
+526	4	Rover	Ro&ver	#C0C0C0	\N
+527	4	Módulo lunar	Mó&du&lo&lu&nar	#C0C0C0	\N
+528	4	Traje espacial	Tra&je&es&pa&ci&al	#FFFFFF	\N
+529	4	Base lunar	Ba&se&lu&nar	#808080	\N
+530	4	Colônia espacial	Co&lô&ni&a&es&pa&ci&al	#FFFFFF	\N
+531	4	Exoplaneta	Ex&o&pla&ne&ta	#0000FF	\N
+532	4	Planeta anão	Pla&ne&ta&a&não	#808080	\N
+533	4	Protoplaneta	Pro&to&pla&ne&ta	#A52A2A	\N
+534	4	Disco protoplanetário	Dis&co&pro&to&pla&ne&tá&rio	#FFA500	\N
+535	4	Sol	Sol	#FFFF00	\N
+536	4	Lua	Lu&a	#808080	\N
+537	4	Terra	Ter&ra	#0000FF	\N
+538	4	Marte	Mar&te	#FF0000	\N
+539	4	Júpiter	Jú&pi&ter	#A52A2A	\N
+540	4	Saturno	Sa&tur&no	#FFFF00	\N
+541	4	Urano	U&ra&no	#0000FF	\N
+542	4	Netuno	Nep&tu&no	#0000FF	\N
+543	4	Mercúrio	Mer&cú&rio	#808080	\N
+544	4	Vênus	Vê&nus	#FFFF00	\N
+545	4	Plutão	Plu&tão	#808080	\N
+546	4	Estrela	Es&tre&la	#FFFFFF	\N
+547	4	Galáxia	Ga&lá&xia	#FF69B4	\N
+548	4	Nebulosa	Ne&bu&lo&sa	#800080	\N
+549	4	Cometa	Co&me&ta	#FFFFFF	\N
+550	4	Asteroide	As&te&roi&de	#808080	\N
+551	4	Meteoro	Me&te&o&ro	#FFA500	\N
+552	4	Meteorito	Me&te&o&ri&to	#808080	\N
+553	4	Buraco negro	Bu&ra&co&ne&gro	#000000	\N
+554	4	Quasar	Qua&sar	#0000FF	\N
+555	4	Pulsar	Pul&sar	#0000FF	\N
+556	4	Supernova	Su&per&no&va	#FFFFFF	\N
+557	4	Constelação	Cons&te&la&ção	#FFFFFF	\N
+558	4	Andrômeda	An&drô&me&da	#800080	\N
+559	4	Via Láctea	Vi&a&Lác&te&a	#FFFFFF	\N
+560	4	Eclipse	E&clip&se	#000000	\N
+561	4	Eclipse solar	E&clip&se&so&lar	#FFFF00	\N
+562	4	Eclipse lunar	E&clip&se&lu&nar	#FF0000	\N
+563	4	Órbita	Ór&bi&ta	#0000FF	\N
+564	4	Gravidade	Gra&vi&da&de	#000000	\N
+565	4	Astronauta	As&tro&nau&ta	#FFFFFF	\N
+566	4	Foguete	Fo&gue&te	#C0C0C0	\N
+567	4	Satélite	Sa&té&li&te	#C0C0C0	\N
+568	4	Estação espacial	Es&ta&ção&es&pa&ci&al	#FFFFFF	\N
+569	4	Telescópio	Te&les&có&pio	#C0C0C0	\N
+570	4	Astronomia	As&tro&no&mi&a	#0000FF	\N
+571	4	Cosmos	Cos&mos	#000000	\N
+572	4	Universo	U&ni&ver&so	#FF69B4	\N
+573	4	Espaço	Es&pa&ço	#000000	\N
+574	4	Planeta	Pla&ne&ta	#0000FF	\N
+575	4	Estrela cadente	Es&tre&la&ca&den&te	#FFFF00	\N
+576	4	Estrela anã	Es&tre&la&a&nã	#FF0000	\N
+577	4	Anã branca	A&nã&bran&ca	#FFFFFF	\N
+578	4	Anã vermelha	A&nã&ver&me&lha	#FF0000	\N
+579	4	Gigante vermelha	Gi&gan&te&ver&me&lha	#FF0000	\N
+580	4	Gigante azul	Gi&gan&te&a&zul	#0000FF	\N
+581	4	Anel planetário	A&nel&pla&ne&tá&rio	#FFFF00	\N
+582	4	Atmosfera	At&mos&fe&ra	#0000FF	\N
+583	4	Cinturão de asteroides	Cin&tu&rão&de&as&te&roi&des	#808080	\N
+584	4	Cinturão de Kuiper	Cin&tu&rão&de&Kui&per	#0000FF	\N
+585	4	Nuvem de Oort	Nu&vem&de&Oort	#FFFFFF	\N
+586	4	Lua cheia	Lu&a&chei&a	#FFFFFF	\N
+587	4	Lua nova	Lu&a&no&va	#000000	\N
+588	4	Lua crescente	Lu&a&cres&cen&te	#FFFF00	\N
+589	4	Lua minguante	Lu&a&min&gu&an&te	#808080	\N
+590	4	Cratera	Cra&te&ra	#808080	\N
+591	4	Solo lunar	So&lo&lu&nar	#808080	\N
+592	4	Mar lunar	Mar&lu&nar	#808080	\N
+593	4	Anel de Saturno	A&nel&de&Sa&tur&no	#FFFF00	\N
+594	4	Mancha solar	Man&cha&so&lar	#000000	\N
+595	4	Vento solar	Ven&to&so&lar	#FFFF00	\N
+596	4	Tempestade solar	Tem&pes&ta&de&so&lar	#FFA500	\N
+597	4	Aurora	Au&ro&ra	#008000	\N
+598	4	Aurora boreal	Au&ro&ra&bo&re&al	#008000	\N
+599	4	Aurora austral	Au&ro&ra&aus&tral	#800080	\N
+600	4	Radiação	Ra&di&a&ção	#800080	\N
+601	4	Luz	Luz	#FFFFFF	\N
+602	4	Fóton	Fó&ton	#FFFFFF	\N
+603	4	Vácuo	Vá&cu&o	#000000	\N
+604	4	Dimensão	Di&men&são	#800080	\N
+605	4	Espaço-tempo	Es&pa&ço&tem&po	#000000	\N
+606	4	Matéria escura	Ma&té&ria&es&cu&ra	#000000	\N
+607	4	Energia escura	E&ner&gi&a&es&cu&ra	#800080	\N
+608	4	Antimatéria	An&ti&ma&té&ria	#0000FF	\N
+609	4	Galáxia espiral	Ga&lá&xia&es&pi&ral	#0000FF	\N
+610	4	Galáxia elíptica	Ga&lá&xia&e&líp&ti&ca	#FFFF00	\N
+611	4	Aglomerado estelar	A&glo&me&ra&do&es&te&lar	#FFFFFF	\N
+612	4	Aglomerado de galáxias	A&glo&me&ra&do&de&ga&lá&xi&as	#FF69B4	\N
+613	4	Estrela de nêutrons	Es&tre&la&de&nêu&trons	#0000FF	\N
+614	4	Anã marrom	A&nã&ma&rrom	#A52A2A	\N
+615	4	Anã negra	A&nã&ne&gra	#000000	\N
+616	4	Buraco de minhoca	Bu&ra&co&de&mi&nho&ca	#800080	\N
+617	4	Horizonte de eventos	Ho&ri&zon&te&de&e&ven&tos	#000000	\N
+618	4	Singularidade	Sin&gu&la&ri&da&de	#000000	\N
+619	4	Magnetar	Mag&ne&tar	#0000FF	\N
+620	4	Blazar	Bla&zar	#800080	\N
+621	4	Radiação cósmica	Ra&di&a&ção&cós&mi&ca	#FFFFFF	\N
+622	4	Raio cósmico	Rai&o&cós&mi&co	#0000FF	\N
+623	4	Plasma	Plas&ma	#FFA500	\N
+624	4	Hidrogênio	Hi&dro&gê&nio	#FFFFFF	\N
+625	4	Hélio	Hé&lio	#FFFF00	\N
+626	4	Oxigênio	O&xi&gê&nio	#FF0000	\N
+627	4	Nitrogênio	Ni&tro&gê&nio	#0000FF	\N
+628	4	Carbono	Car&bo&no	#000000	\N
+629	4	Superaglomerado	Su&per&a&glo&me&ra&do	#FF69B4	\N
+630	4	Filamento cósmico	Fi&la&men&to&cós&mi&co	#FFFFFF	\N
+631	4	Hubble	Hub&ble	#C0C0C0	\N
+632	4	James Webb	Ja&mes&Webb	#FFD700	\N
+633	4	ISS	ISS	#FFFFFF	\N
+634	4	Rover	Ro&ver	#C0C0C0	\N
+635	4	Módulo lunar	Mó&du&lo&lu&nar	#C0C0C0	\N
+636	4	Traje espacial	Tra&je&es&pa&ci&al	#FFFFFF	\N
+637	4	Base lunar	Ba&se&lu&nar	#808080	\N
+638	4	Colônia espacial	Co&lô&ni&a&es&pa&ci&al	#FFFFFF	\N
+639	4	Exoplaneta	Ex&o&pla&ne&ta	#0000FF	\N
+640	4	Planeta anão	Pla&ne&ta&a&não	#808080	\N
+641	4	Protoplaneta	Pro&to&pla&ne&ta	#A52A2A	\N
+642	4	Disco protoplanetário	Dis&co&pro&to&pla&ne&tá&rio	#FFA500	\N
 \.
 
 
@@ -720,7 +721,7 @@ ALTER TABLE ONLY public.palavras
     ADD CONSTRAINT palavras_id_nicho_fkey FOREIGN KEY (id_nicho) REFERENCES public.nichos(id);
 
 
--- Completed on 2026-09-24 17:05:41
+-- Completed on 2026-11-05 16:53:13
 
 --
 -- PostgreSQL database dump complete
