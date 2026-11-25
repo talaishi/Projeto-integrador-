@@ -5,7 +5,7 @@
 -- Dumped from database version 17.4
 -- Dumped by pg_dump version 17.4
 
--- Started on 2026-11-24 14:49:23
+-- Started on 2026-11-25 16:03:00
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -24,7 +24,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 217 (class 1259 OID 25104)
+-- TOC entry 217 (class 1259 OID 16406)
 -- Name: nichos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -37,7 +37,7 @@ CREATE TABLE public.nichos (
 ALTER TABLE public.nichos OWNER TO postgres;
 
 --
--- TOC entry 218 (class 1259 OID 25107)
+-- TOC entry 218 (class 1259 OID 16409)
 -- Name: nichos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -62,7 +62,7 @@ ALTER SEQUENCE public.nichos_id_seq OWNED BY public.nichos.id;
 
 
 --
--- TOC entry 219 (class 1259 OID 25108)
+-- TOC entry 219 (class 1259 OID 16410)
 -- Name: palavras; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -79,7 +79,7 @@ CREATE TABLE public.palavras (
 ALTER TABLE public.palavras OWNER TO postgres;
 
 --
--- TOC entry 220 (class 1259 OID 25111)
+-- TOC entry 220 (class 1259 OID 16413)
 -- Name: palavras_id_palavra_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -104,7 +104,7 @@ ALTER SEQUENCE public.palavras_id_palavra_seq OWNED BY public.palavras.id_palavr
 
 
 --
--- TOC entry 4747 (class 2604 OID 25112)
+-- TOC entry 4747 (class 2604 OID 16536)
 -- Name: nichos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -112,7 +112,7 @@ ALTER TABLE ONLY public.nichos ALTER COLUMN id SET DEFAULT nextval('public.nicho
 
 
 --
--- TOC entry 4748 (class 2604 OID 25113)
+-- TOC entry 4748 (class 2604 OID 16537)
 -- Name: palavras id_palavra; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -120,7 +120,7 @@ ALTER TABLE ONLY public.palavras ALTER COLUMN id_palavra SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 4899 (class 0 OID 25104)
+-- TOC entry 4899 (class 0 OID 16406)
 -- Dependencies: 217
 -- Data for Name: nichos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -134,7 +134,7 @@ COPY public.nichos (id, nicho) FROM stdin;
 
 
 --
--- TOC entry 4901 (class 0 OID 25108)
+-- TOC entry 4901 (class 0 OID 16410)
 -- Dependencies: 219
 -- Data for Name: palavras; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -215,6 +215,56 @@ COPY public.palavras (id_palavra, id_nicho, palavra, silaba, cor, img) FROM stdi
 716	3	Lavanda	la&van&da	#e6e6fa	/static/uploads/Lavanda.png
 717	3	Vinho	vi&nho	#800020	/static/uploads/Vinho.png
 718	3	Bronze	bron&ze	#CD7F32	/static/uploads/Bronze.png
+719	4	Sol	sol	#f9b32e	/static/uploads/Sol.png
+720	4	Lua	lu&a	#fdd335	/static/uploads/Lua.png
+721	4	Terra	ter&ra	#338cda	/static/uploads/Terra.png
+722	4	Marte	mar&te	#e72f29	/static/uploads/Marte.png
+723	4	Júpiter	jú&pi&ter	#e8845b	/static/uploads/Júpiter.png
+724	4	Saturno	sa&tur&no	#f9a237	/static/uploads/Saturno.png
+725	4	Urano	u&ra&no	#3b6f72	/static/uploads/Urano.png
+726	4	Netuno	ne&tu&no	#8eaadb	/static/uploads/Netuno.png
+727	4	Mercúrio	mer&cú&ri&o	#aa4936	/static/uploads/Mercúrio.png
+728	4	Vênus	vê&nus	#f48433	/static/uploads/Vênus.png
+729	4	Plutão	plu&tão	#cb5d29	/static/uploads/Plutão.png
+730	4	Estrela	es&tre&la	#fbca42	/static/uploads/Estrela.png
+731	4	Galáxia	ga&lá&xi&a	#23266e	/static/uploads/Galáxia.png
+732	4	Cometa	co&me&ta	#f6d859	/static/uploads/Cometa.png
+733	4	Asteroide	as&te&roi&de	#8ad9d4	/static/uploads/Asteroide.png
+734	4	Meteoro	me&te&o&ro	#575e68	/static/uploads/Meteoro.png
+735	4	Constelação	cons&te&la&ção	#cc9f3a	/static/uploads/Constelação.png
+736	4	Via Láctea	vi&a lác&te&a	#b88bd6	/static/uploads/Via_Láctea.png
+737	4	Astronauta	as&tro&nau&ta	#30387b	/static/uploads/Astronauta.png
+738	4	Foguete	fo&gue&te	#e63811	/static/uploads/Foguete.png
+739	4	Satélite	sa&té&li&te	#e8e8e8	/static/uploads/Satélite.png
+740	4	Telescópio	te&les&có&pi&o	#243753	/static/uploads/Telescópio.png
+741	4	Universo	u&ni&ver&so	#120348	/static/uploads/Universo.png
+742	4	Espaço	es&pa&ço	#07060c	/static/uploads/Espaço.png
+743	4	Aurora boreal	au&ro&ra bo&re&al	#9173c8	/static/uploads/Aurora_boreal.png
+744	4	Sol	sol	#f9b32e	/static/uploads/Sol.png
+745	4	Lua	lu&a	#fdd335	/static/uploads/Lua.png
+746	4	Terra	ter&ra	#338cda	/static/uploads/Terra.png
+747	4	Marte	mar&te	#e72f29	/static/uploads/Marte.png
+748	4	Júpiter	jú&pi&ter	#e8845b	/static/uploads/Júpiter.png
+749	4	Saturno	sa&tur&no	#f9a237	/static/uploads/Saturno.png
+750	4	Urano	u&ra&no	#3b6f72	/static/uploads/Urano.png
+751	4	Netuno	ne&tu&no	#8eaadb	/static/uploads/Netuno.png
+752	4	Mercúrio	mer&cú&ri&o	#aa4936	/static/uploads/Mercúrio.png
+753	4	Vênus	vê&nus	#f48433	/static/uploads/Vênus.png
+754	4	Plutão	plu&tão	#cb5d29	/static/uploads/Plutão.png
+755	4	Estrela	es&tre&la	#fbca42	/static/uploads/Estrela.png
+756	4	Galáxia	ga&lá&xi&a	#23266e	/static/uploads/Galáxia.png
+757	4	Cometa	co&me&ta	#f6d859	/static/uploads/Cometa.png
+758	4	Asteroide	as&te&roi&de	#8ad9d4	/static/uploads/Asteroide.png
+759	4	Meteoro	me&te&o&ro	#575e68	/static/uploads/Meteoro.png
+760	4	Constelação	cons&te&la&ção	#cc9f3a	/static/uploads/Constelação.png
+761	4	Via Láctea	vi&a lác&te&a	#b88bd6	/static/uploads/Via_Láctea.png
+762	4	Astronauta	as&tro&nau&ta	#30387b	/static/uploads/Astronauta.png
+763	4	Foguete	fo&gue&te	#e63811	/static/uploads/Foguete.png
+764	4	Satélite	sa&té&li&te	#e8e8e8	/static/uploads/Satélite.png
+765	4	Telescópio	te&les&có&pi&o	#243753	/static/uploads/Telescópio.png
+766	4	Universo	u&ni&ver&so	#120348	/static/uploads/Universo.png
+767	4	Espaço	es&pa&ço	#07060c	/static/uploads/Espaço.png
+768	4	Aurora boreal	au&ro&ra bo&re&al	#9173c8	/static/uploads/Aurora_boreal.png
 \.
 
 
@@ -233,11 +283,11 @@ SELECT pg_catalog.setval('public.nichos_id_seq', 4, true);
 -- Name: palavras_id_palavra_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.palavras_id_palavra_seq', 718, true);
+SELECT pg_catalog.setval('public.palavras_id_palavra_seq', 768, true);
 
 
 --
--- TOC entry 4750 (class 2606 OID 25115)
+-- TOC entry 4750 (class 2606 OID 16417)
 -- Name: nichos nichos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -246,7 +296,7 @@ ALTER TABLE ONLY public.nichos
 
 
 --
--- TOC entry 4752 (class 2606 OID 25117)
+-- TOC entry 4752 (class 2606 OID 16419)
 -- Name: palavras palavras_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -255,7 +305,7 @@ ALTER TABLE ONLY public.palavras
 
 
 --
--- TOC entry 4753 (class 2606 OID 25118)
+-- TOC entry 4753 (class 2606 OID 16420)
 -- Name: palavras palavras_id_nicho_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -263,7 +313,7 @@ ALTER TABLE ONLY public.palavras
     ADD CONSTRAINT palavras_id_nicho_fkey FOREIGN KEY (id_nicho) REFERENCES public.nichos(id);
 
 
--- Completed on 2026-11-24 14:49:23
+-- Completed on 2026-11-25 16:03:00
 
 --
 -- PostgreSQL database dump complete
