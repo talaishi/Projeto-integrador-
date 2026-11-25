@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ff7180">
+  <title>Tente novamente!</title>
+  <link rel="stylesheet" href="resultado.css">
+  <script src="resultado.js" defer></script>
+</head>
+<body>
+  <main class="tela resultado--erro" data-status="erro">
+
+    <section class="conteudo">
+      <header class="mensagem">
+        <h1>OPS!</h1>
+        <p>TENTE NOVAMENTE!</p>
+      </header>
+
+      <div class="imagem-area">
+        <img id="imagem-palavra" class="imagem-palavra" src="" alt="Imagem da palavra" hidden>
+        <div id="imagem-fallback" class="imagem-fallback" aria-hidden="true">⭐</div>
+      </div>
+
+      <button id="botao-tentar" class="botao botao--tentar" type="button">TENTAR DE NOVO <span aria-hidden="true">⟳</span></button>
+    </section>
+  </main>
+</body>
+</html>

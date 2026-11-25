@@ -1,0 +1,36 @@
+TELAS DE ACERTO E ERRO — JOGO DAS SÍLABAS
+
+Arquivos adicionados:
+- acerto.html: tela exibida quando a criança acerta.
+- erro.html: tela exibida quando a criança erra.
+- resultado.css: estilo compartilhado pelas duas telas.
+- resultado.js: carrega a imagem e o nome da palavra atual e controla os botões.
+
+COMO ENVIAR A PALAVRA ATUAL
+
+Opção 1 — antes de abrir a tela, salve os dados no localStorage:
+
+localStorage.setItem('imagemAtual', 'imagens/frutas/banana.png');
+localStorage.setItem('palavraAtual', 'Banana');
+localStorage.setItem('paginaJogo', 'frutas.html');
+localStorage.setItem('proximaPagina', 'proxima-pergunta.html');
+
+// Se acertar:
+window.location.href = 'acerto.html';
+
+// Se errar:
+window.location.href = 'erro.html';
+
+Opção 2 — envie os dados pela URL:
+
+acerto.html?imagem=imagens/frutas/banana.png&palavra=Banana&proxima=proxima-pergunta.html&jogo=frutas.html
+
+erro.html?imagem=imagens/frutas/banana.png&palavra=Banana&jogo=frutas.html
+
+IMPORTANTE:
+- Troque os caminhos de exemplo pelos caminhos reais das imagens do seu projeto.
+- A imagem muda conforme o valor de imagemAtual ou o parâmetro imagem.
+- O texto muda conforme palavraAtual ou o parâmetro palavra.
+- O botão PRÓXIMA usa proximaPagina (ou o parâmetro proxima).
+- O botão TENTAR DE NOVO retorna para paginaJogo (ou o parâmetro jogo).
+- Ajuste 'jogo.html' para o nome real da página do seu jogo.
